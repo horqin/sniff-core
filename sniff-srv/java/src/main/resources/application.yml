@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://centos:3306/db
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  redis:
+    host: centos
+    port: 6379
+  cloud:
+    zookeeper:
+      connect-string: centos:2181
+  rabbitmq:
+    host: centos
+    port: 5672
+    username: guest
+    password: guest
+  kafka:
+    bootstrap-servers: centos:9093
+config:
+  forecast-url: http://localhost:5000
+  delay-time: 10000

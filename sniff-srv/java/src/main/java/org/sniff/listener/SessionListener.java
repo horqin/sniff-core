@@ -1,6 +1,5 @@
 package org.sniff.listener;
 
-import cn.hutool.core.util.BooleanUtil;
 import org.sniff.dao.SessionDao;
 import org.sniff.entity.Session;
 import org.sniff.feign.ForecastFeign;
@@ -8,10 +7,12 @@ import org.sniff.utils.R;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.*;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.Date;
 
 @Component
@@ -33,9 +34,12 @@ public class SessionListener {
         String session = new String(message.getBody(), StandardCharsets.UTF_8);
 
         // 检查是否存在
-        if (BooleanUtil.isFalse(stringRedisTemplate.opsForSet().isMember("done-session-entry", session))) {
-            stringRedisTemplate.opsForSet().add("done-session-entry", session);
-
+        if (stringRedisTemplate.execute(new DefaultRedisScript<>(
+                "if redis.call('SISMEMBER','done-session-entry', KEYS[1]) == 0 then" +
+                "  redis.call('SADD','done-session-entry', KEYS[1]);" +
+                "  return true;" +
+                "end;" +
+                "return false;", Boolean.class), Collections.singletonList(session))) {
             // 若是并不存在，那么在日志中记录预测结果
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {

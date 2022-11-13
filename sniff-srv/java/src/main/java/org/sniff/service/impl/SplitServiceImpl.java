@@ -61,21 +61,22 @@ public class SplitServiceImpl implements SplitService {
                 String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);
                 double score = (double) packet.getArrivalTime();
 
+                Long count;
+                if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) == 0) {
+                    // 添加延迟队列，保证网络流量一定得到处理
+                    rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
+                        m.getMessageProperties().getHeaders().put("x-delay", delayTime);
+                        return m;
+                    });
+                } else if (count > PacketConstant.maxCount
+                        && !stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
+                    // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
+                    // 特殊情况：done-session-entry 集合还未创建，此时当作尚未进行分析
+                    rabbitTemplate.convertAndSend("session-queue", key);
+                }
+
                 // 转储 Redis 中的 zSet
                 stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
-
-                // 当 `count == MIN_COUNT` 时，发送延迟队列；当 `count == MAX_COUNT` 时，发送消息队列
-                Long count;
-                if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) != null) {
-                    if (count.equals(PacketConstant.minCount)) {
-                        rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
-                            m.getMessageProperties().getHeaders().put("x-delay", delayTime);
-                            return m;
-                        });
-                    } else if (count.equals(PacketConstant.maxCount)) {
-                        rabbitTemplate.convertAndSend("session-queue", key);
-                    }
-                }
 
                 return true;
             });

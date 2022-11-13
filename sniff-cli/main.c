@@ -119,7 +119,7 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
 }
 
 #define NCPUS 4
-#define NPKTS 4
+#define NPKTS 100
 
 static void *pcap;
 static void *pool;

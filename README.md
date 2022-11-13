@@ -31,6 +31,15 @@ $ cd sniff-srv/docker
 $ docker compose up -d
 ```
 
+* MySQL 配置
+
+```
+$ cd sniff-src/sql
+$ mysqladmin -hcentos -uroot -p create db
+$ mysql -hcentos -uroot -p db < db.sql
+$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');"
+```
+
 * Debian 配置
 
 ```
@@ -44,15 +53,6 @@ $ python main.py
 ```
 $ cd sniff-srv/java
 $ mvn spring-boot:run
-```
-
-* MySQL 配置
-
-```
-$ cd sniff-src/sql
-$ mysqladmin -hcentos -uroot -p create db
-$ mysql -hcentos -uroot -p db < db.sql
-$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');"
 ```
 
 ## 客户端

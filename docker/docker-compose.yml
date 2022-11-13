@@ -9,6 +9,8 @@ services:
     volumes:
       - ./conf/my.cnf:/etc/mysql/my.cnf
       - ./data/mysql:/var/lib/mysql/
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
   canal:
     image: canal/canal-server:v1.1.6
     ports:
@@ -58,7 +60,7 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
       - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://192.168.157.130:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://centos:9093
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
     depends_on:
       - zookeeper

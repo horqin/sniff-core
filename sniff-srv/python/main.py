@@ -1,5 +1,4 @@
 ## 定义
-REDIS_HOST = 'centos'
 N, M = 24, 100
 
 
@@ -37,7 +36,7 @@ from flask import Flask, jsonify
 
 # redis
 from redis import Redis
-redis = Redis(host=REDIS_HOST, port=6379)
+redis = Redis(host='centos', port=6379)
 # model
 model = Model().load_from_checkpoint('data/model.chk')
 # convert
@@ -58,4 +57,3 @@ def forecast(session):
     return jsonify({ 'data': pred })
 
 app.run(host='0.0.0.0', debug=True)
-

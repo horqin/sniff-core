@@ -35,10 +35,8 @@ int main(int argc, const char *argv[]) {
         exit(-1);
     }
 
-#ifdef _DEBUG
-    zoo_set_debug_level(ZOO_LOG_LEVEL_DEBUG);
-#else
-    zoo_set_debug_level(ZOO_LOG_LEVEL_ERROR);
+#ifndef _DEBUG
+    close(0), close(1), close(2);
 #endif
 
     zhandle_t *zh;

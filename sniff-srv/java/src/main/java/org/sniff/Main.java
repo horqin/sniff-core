@@ -12,8 +12,8 @@ import org.springframework.kafka.annotation.EnableKafka;
 @EnableKafka
 @MapperScan("org.sniff.dao")
 @SpringBootApplication(scanBasePackages = "org.sniff")
-public class SniffApp {
+public class Main {
     public static void main(String[] args) {
-        SpringApplication.run(SniffApp.class, args);
+        SpringApplication.run(Main.class, args);
     }
 }

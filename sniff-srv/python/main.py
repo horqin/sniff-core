@@ -1,11 +1,10 @@
 ## 定义
-REDIS_HOST = "docker"
-MODEL_PATH = "data/model.chk"
+REDIS_HOST = 'centos'
 N, M = 24, 100
 
 
 ## 模型
-from pytorch_lightning.core.lightning import LightningModule
+from pytorch_lightning.core.module import LightningModule
 import torch
 
 class Model(LightningModule):
@@ -40,7 +39,7 @@ from flask import Flask, jsonify
 from redis import Redis
 redis = Redis(host=REDIS_HOST, port=6379)
 # model
-model = Model().load_from_checkpoint(MODEL_PATH)
+model = Model().load_from_checkpoint('data/model.chk')
 # convert
 def convert(session):
     matrix = [[0] * M for _ in range(N)]
@@ -50,10 +49,13 @@ def convert(session):
         for j in range(min(m, M)):
             matrix[i][j] = session[i][j]
     return matrix
-# forecast app
+# flask
 app = Flask(__name__)
 @app.route('/<string:session>')
 def forecast(session):
-    session = redis.zrevrange("session::" + session, 0, N-1)
+    session = redis.zrevrange('session::' + session, 0, N-1)
     pred = int(model(torch.LongTensor([convert(session)]))[0])
-    return jsonify({ "data": pred })
+    return jsonify({ 'data': pred })
+
+app.run(host='0.0.0.0', debug=True)
+

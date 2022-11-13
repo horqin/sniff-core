@@ -1,4 +1,0 @@
-Flask==2.2.2
-redis==4.3.4
-torch==1.8.2+cu102
-pytorch_lightning==1.6.5

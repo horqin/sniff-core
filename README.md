@@ -27,7 +27,7 @@
 * CentOS 配置
 
 ```
-$ cd docker
+$ cd sniff-srv/docker
 $ docker compose up -d
 ```
 

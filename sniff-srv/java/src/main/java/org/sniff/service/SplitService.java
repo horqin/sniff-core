@@ -1,8 +1,9 @@
 package org.sniff.service;
 
 import java.io.IOException;
+import java.io.InputStream;
 
 public interface SplitService {
 
-    void split(byte[] bytes) throws IOException;
+    void split(InputStream inputStream) throws IOException;
 }

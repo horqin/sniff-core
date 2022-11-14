@@ -176,47 +176,39 @@ void handler_curl(void *arg) {
     struct stat stat;
     fstat(fileno(fp), &stat);
 
-    unsigned long src_size = stat.st_size;
-    void *src;
-    if ((src = mmap(NULL, src_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
+    void *ptr;
+    if ((ptr = mmap(NULL, stat.st_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
 #ifdef _DEBUG
         perror("mmap");
 #endif
         exit(1);
     }
 
-    unsigned long dst_size = sodium_base64_ENCODED_LEN(src_size, sodium_base64_VARIANT_URLSAFE);
-    void *dst;
-    if ((dst = mmap(NULL, dst_size, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0)) == (void *)-1) {
-#ifdef _DEBUG
-        perror("mmap");
-#endif
-        exit(1);
-    }
-    sodium_bin2base64(dst, dst_size, src, src_size, sodium_base64_VARIANT_URLSAFE);
-
-    CURL *ch = curl_easy_init();
-    curl_easy_setopt(ch, CURLOPT_BUFFERSIZE, 102400L);
-    curl_easy_setopt(ch, CURLOPT_URL, server);
-    curl_easy_setopt(ch, CURLOPT_NOPROGRESS, 1L);
-    curl_easy_setopt(ch, CURLOPT_POSTFIELDS, dst);
-    curl_easy_setopt(ch, CURLOPT_POSTFIELDSIZE_LARGE, dst_size - 1);
-    curl_easy_setopt(ch, CURLOPT_USERAGENT, "curl/7.74.0");
-    curl_easy_setopt(ch, CURLOPT_MAXREDIRS, 50L);
-    curl_easy_setopt(ch, CURLOPT_CUSTOMREQUEST, "POST");
-    curl_easy_setopt(ch, CURLOPT_FTP_SKIP_PASV_IP, 1L);
-    curl_easy_setopt(ch, CURLOPT_TCP_KEEPALIVE, 1L);
+    CURL *curl = curl_easy_init();
+    struct curl_slist *curl_slist = curl_slist_append(NULL, "Content-Type:application/octet-stream");
+    curl_easy_setopt(curl, CURLOPT_BUFFERSIZE, 102400L);
+    curl_easy_setopt(curl, CURLOPT_URL, server);
+    curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 1L);
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDS, ptr);
+    curl_easy_setopt(curl, CURLOPT_POSTFIELDSIZE_LARGE, (curl_off_t)stat.st_size);
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, curl_slist);
+    curl_easy_setopt(curl, CURLOPT_USERAGENT, "curl/7.85.0");
+    curl_easy_setopt(curl, CURLOPT_MAXREDIRS, 50L);
+    curl_easy_setopt(curl, CURLOPT_HTTP_VERSION, (long)CURL_HTTP_VERSION_2TLS);
+    curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_easy_setopt(curl, CURLOPT_FTP_SKIP_PASV_IP, 1L);
+    curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
     CURLcode rc;
-    if ((rc = curl_easy_perform(ch)) != CURLE_OK) {
+    if ((rc = curl_easy_perform(curl)) != CURLE_OK) {
 #ifdef _DEBUG
         fprintf(stderr, "curl_easy_perform: %s\n", curl_easy_strerror(rc));
 #endif
         exit(1);
     }
-    curl_easy_cleanup(ch);
-
-    munmap(src, src_size);
-    munmap(dst, dst_size);
+    curl_slist_free_all(curl_slist);
+    curl_easy_cleanup(curl);
+    
+    munmap(ptr, stat.st_size);
 
     fclose(fp);
 }

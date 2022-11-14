@@ -25,15 +25,16 @@ static void service();
 /*
  * 监视器部分
  */
-static int pid;
+static int pid; // 子进程 PID
 
-static char device[64];
-static char filter[64];
-static char server[64];
+static char device[64]; // 监听的网络设备
+static char filter[64]; // BPF 表达式
+static char server[64]; // 上传网络流量的目标服务器
 
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
+    // 解析全局变量
     char *host, *path;
     if ((host = getenv("ZK_HOST")) == NULL || (path = getenv("ZK_PATH")) == NULL) {
 #ifdef _DEBUG
@@ -43,9 +44,11 @@ int main(int argc, const char *argv[]) {
     }
 
 #ifndef _DEBUG
+    // 关闭标准 I/O，RELEASE 版本生效
     close(0), close(1), close(2);
 #endif
 
+    // 连接 ZK 服务器
     zhandle_t *zh;
     if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
 #ifdef _DEBUG
@@ -54,13 +57,19 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
+    // 获取 ZK 服务器指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
     watcher(zh, 0, 0, path, NULL);
 
+    // 创建子进程之后，主进程等待子进程退出
+    // 注意：`fork` 函数只会复制主进程的主线程的虚拟内存，因此子进程不会触发 `watcher` 函数
     for (;;) {
+        // 子进程
         if ((pid = fork()) == 0) service();
 
+        // 主进程
         int stat;
         (void)waitpid(pid, &stat, 0);
+        // 如果子进程错误地退出，那么主进程同样退出
         if (WIFEXITED(stat) && WEXITSTATUS(stat)) {
             exit(1);
         }
@@ -70,6 +79,7 @@ int main(int argc, const char *argv[]) {
 void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     char buf[256];
     int buf_size = sizeof buf;
+    // 获取 ZK 服务器指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
     int rc;
     if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
 #ifdef _DEBUG
@@ -89,12 +99,14 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
 #endif
         exit(1);
     }
+    // 解析配置信息，记录到全局变量中
     cJSON *obj = cJSON_Parse(buf);
     strcpy(device, cJSON_GetObjectItem(obj, "device")->valuestring);
     strcpy(filter, cJSON_GetObjectItem(obj, "filter")->valuestring);
     strcpy(server, cJSON_GetObjectItem(obj, "server")->valuestring);
     cJSON_Delete(obj);
 
+    // 此处只有首次执行时不会进行，作用是结束子进程
     static int i = 0;
     if (i == 0) {
         i = 1;
@@ -107,18 +119,22 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
 /*
  * 嗅探器部分
  */
-#define NPKTS 100
+#define NPKTS 100 // 每次上传的数据包数量
 
-static void *loop;
-static void *pcap;
+static void *loop; // 线程池句柄
+static void *pcap; // PCAP 句柄
 
 static void handler_ctrl(int sig);
 static void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, const unsigned char *bytes);
 static void handler_curl(uv_work_t *req);
 
 void service() {
+    // CURL 客户端全局初始化
     curl_global_init(CURL_GLOBAL_ALL);
 
+    // 创建线程池
+    // 注意：线程池创建期间屏蔽信号，使得子线程继承主线程的信号向量。
+    // 从而，主线程接收信号，子线程屏蔽信号，只有主线程能够触发相应的操作
     sigset_t newset, oldset;
     sigemptyset(&newset);
     sigaddset(&newset, SIGINT);
@@ -126,8 +142,10 @@ void service() {
     loop = uv_default_loop();
     pthread_sigmask(SIG_SETMASK, &oldset, NULL);
 
+    // 注册信号处理函数
     signal(SIGINT, handler_ctrl);
 
+    // 嗅探
     bpf_u_int32 addr, mask;
     char errbuf[PCAP_ERRBUF_SIZE];
     if (pcap_lookupnet(device, &addr, &mask, errbuf) == PCAP_ERROR ||
@@ -149,18 +167,24 @@ void service() {
 }
 
 void handler_ctrl(int sig) {
+    // 首先，关闭 PCAP 句柄，使得线程池中不再持续堆积任务
     pcap_close(pcap);
 
+    // 然后，执行线程池中尚未完成的任务
     (void)uv_run(loop, UV_RUN_DEFAULT);
 
+    // 接着，CURL 全局清理
     curl_global_cleanup();
 
+    // 最后，退出
     exit(0);
 }
 
 void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, const unsigned char *bytes) {
     static pcap_dumper_t *pcap_dumper = NULL;
 
+    // 每收集 NPKTS 份数据包，便向目标服务器上传
+    // 注意：存储在临时文件中，当关闭文件描述符或者进程结束时，自动删除
     static int i = 0;
     if ((i = ((i + 1) % NPKTS)) == 1) {
         if (pcap_dumper != NULL) {
@@ -178,9 +202,11 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
 void handler_curl(uv_work_t *req) {
     FILE *fp = (FILE *)req->data;
 
+    // 检索临时文件的大小
     struct stat stat;
     fstat(fileno(fp), &stat);
 
+    // 生成临时文件对应的内存映射区域
     void *ptr;
     if ((ptr = mmap(NULL, stat.st_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
 #ifdef _DEBUG
@@ -189,6 +215,7 @@ void handler_curl(uv_work_t *req) {
         exit(1);
     }
 
+    // 上传网络流量到目标服务器上，使用二进制 POST 的方式
     CURL *curl = curl_easy_init();
     struct curl_slist *curl_slist = curl_slist_append(NULL, "Content-Type:application/octet-stream");
     curl_easy_setopt(curl, CURLOPT_BUFFERSIZE, 102400L);
@@ -213,7 +240,9 @@ void handler_curl(uv_work_t *req) {
     curl_slist_free_all(curl_slist);
     curl_easy_cleanup(curl);
     
+    // 关闭内存映射区域
     munmap(ptr, stat.st_size);
 
+    // 关闭临时文件的文件描述符，从而自动删除文件
     fclose(fp);
 }

@@ -17,6 +17,8 @@
 
 #include "utils/thpool.h"
 
+static void service();
+
 
 /*
  * 监视器部分
@@ -28,7 +30,6 @@ static char filter[64];
 static char server[64];
 
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
-static void service();
 
 int main(int argc, const char *argv[]) {
     char *host, *path;

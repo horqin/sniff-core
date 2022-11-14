@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
-@FeignClient(name = "forecast", url = "${config.forecast-url}")
+@FeignClient(name = "forecast", url = "http://debian:5000")
 public interface ForecastFeign {
 
     @GetMapping("/{session}")

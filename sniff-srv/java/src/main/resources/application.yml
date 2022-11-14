@@ -18,5 +18,4 @@ spring:
   kafka:
     bootstrap-servers: centos:9093
 config:
-  forecast-url: http://debian:5000
-  delay-time: 1800000 # 0.5h
+  delay: 1800000 # 0.5h

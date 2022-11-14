@@ -25,8 +25,8 @@ public class SplitServiceImpl implements SplitService {
 
     private final Long MAX_COUNT = 24L;
 
-    @Value("${config.delay-time}")
-    private Long delayTime;
+    @Value("${config.delay}")
+    private Long delay;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -66,7 +66,7 @@ public class SplitServiceImpl implements SplitService {
                 if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) == 0) {
                     // 添加延迟队列，保证网络流量一定得到处理
                     rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
-                        m.getMessageProperties().getHeaders().put("x-delay", delayTime);
+                        m.getMessageProperties().getHeaders().put("x-delay", delay);
                         return m;
                     });
                 } else if (count > MAX_COUNT

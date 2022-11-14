@@ -37,7 +37,9 @@ $ docker compose up -d # 启动 Docker 服务
 $ cd sniff-src/sql
 $ mysqladmin -hcentos -uroot -p create db # （1）创建数据库、数据表
 $ mysql -hcentos -uroot -p db < db.sql
-$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');" # （2）插入示例配置（注意：启动 Windows 系统的 Java 程序之后执行）
+$ mysql -hcentos -uroot -p db \
+  -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');" \
+  # （2）插入示例配置（注意：启动 Windows 系统的 Java 程序之后执行）
 ```
 
 * Debian 配置
@@ -61,7 +63,8 @@ $ mvn spring-boot:run # 启动 Spring Boot 服务
 
 ```
 $ cd sniff-cli
-$ sudo apt install gcc make libcjson-dev libcurl4-openssl-dev libpcap-dev libsodium-dev libuv1-dev libzookeeper-mt-dev # （1）安装依赖
+$ sudo apt install gcc make libcjson-dev libcurl4-openssl-dev libpcap-dev \
+  libsodium-dev libuv1-dev libzookeeper-mt-dev # （1）安装依赖
 $ make # （2）编译客户端
 $ sudo ZK_HOST=centos:2181 ZK_PATH=/configure/cli-01 ./sniff # （3）启动客户端
 ```

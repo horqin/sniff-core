@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.Date;
 
 @Component
@@ -35,11 +35,11 @@ public class SessionListener {
 
         // 检查是否存在
         if (stringRedisTemplate.execute(new DefaultRedisScript<>(
-                "if redis.call('SISMEMBER','done-session-entry', KEYS[1]) == 0 then" +
-                "  redis.call('SADD','done-session-entry', KEYS[1]);" +
+                "if redis.call('SISMEMBER', KEYS[1], KEYS[2]) == 0 then" +
+                "  redis.call('SADD', KEYS[1], KEYS[2]);" +
                 "  return true;" +
                 "end;" +
-                "return false;", Boolean.class), Collections.singletonList(session))) {
+                "return false;", Boolean.class), Arrays.asList("done-session-entry", session))) {
             // 若是并不存在，那么在日志中记录预测结果
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {

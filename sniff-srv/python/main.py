@@ -50,7 +50,7 @@ def convert(session):
     return matrix
 # flask
 app = Flask(__name__)
-@app.route('/<string:session>')
+@app.route('/forecast/<string:session>')
 def forecast(session):
     session = redis.zrevrange('session::' + session, 0, N-1)
     pred = int(model(torch.LongTensor([convert(session)]))[0])

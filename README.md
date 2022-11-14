@@ -37,7 +37,7 @@ $ docker compose up -d # 启动 Docker 服务
 $ cd sniff-src/sql
 $ mysqladmin -hcentos -uroot -p create db # （1）创建数据库、数据表
 $ mysql -hcentos -uroot -p db < db.sql
-$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');" # （2）插入示例配置
+$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');" # （2）插入示例配置（注意：启动 Windows 系统的 Java 程序之后执行）
 ```
 
 * Debian 配置

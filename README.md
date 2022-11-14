@@ -61,7 +61,7 @@ $ mvn spring-boot:run # 启动 Spring Boot 服务
 
 ```
 $ cd sniff-cli
-$ sudo apt install gcc make libcjson-dev libcurl4-openssl-dev libpcap-dev libsodium-dev libzookeeper-mt-dev # （1）安装依赖
+$ sudo apt install gcc make libcjson-dev libcurl4-openssl-dev libpcap-dev libsodium-dev libuv1-dev libzookeeper-mt-dev # （1）安装依赖
 $ make # （2）编译客户端
 $ sudo ZK_HOST=centos:2181 ZK_PATH=/configure/cli-01 ./sniff # （3）启动客户端
 ```

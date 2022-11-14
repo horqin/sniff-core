@@ -3,6 +3,7 @@
 #define LAMBDA(r, f) ({r _ f _;})
 
 #include <signal.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/mman.h>

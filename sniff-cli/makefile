@@ -1,4 +1,4 @@
-CC = clang
+CC = gcc
 CFLAGS = -Og -D_DEBUG
 LIBS = -pthread -lcjson -lcurl -lpcap -lsodium -lzookeeper_mt
 

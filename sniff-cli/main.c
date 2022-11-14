@@ -1,5 +1,7 @@
 #define _GNU_SOURCE
 
+#define LAMBDA(r, f) ({r _ f _;})
+
 #include <signal.h>
 #include <stdlib.h>
 #include <string.h>
@@ -13,9 +15,8 @@
 #include <curl/curl.h>
 #include <pcap/pcap.h>
 #include <sodium/utils.h>
+#include <uv.h>
 #include <zookeeper/zookeeper.h>
-
-#include "utils/thpool.h"
 
 static void service();
 
@@ -105,15 +106,14 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
 /*
  * 嗅探器部分
  */
-#define NCPUS 4
 #define NPKTS 100
 
+static void *loop;
 static void *pcap;
-static void *pool;
 
 static void handler_ctrl(int sig);
 static void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, const unsigned char *bytes);
-static void handler_curl(void *arg);
+static void handler_curl(uv_work_t *req);
 
 void service() {
     curl_global_init(CURL_GLOBAL_ALL);
@@ -122,7 +122,7 @@ void service() {
     sigemptyset(&newset);
     sigaddset(&newset, SIGINT);
     pthread_sigmask(SIG_BLOCK, &newset, &oldset);
-    pool = thpool_init(2*NCPUS+1);
+    loop = uv_default_loop();
     pthread_sigmask(SIG_SETMASK, &oldset, NULL);
 
     signal(SIGINT, handler_ctrl);
@@ -150,7 +150,7 @@ void service() {
 void handler_ctrl(int sig) {
     pcap_close(pcap);
 
-    thpool_wait(pool), thpool_destroy(pool);
+    (void)uv_run(loop, UV_RUN_DEFAULT);
 
     curl_global_cleanup();
 
@@ -164,15 +164,18 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
     if ((i = ((i + 1) % NPKTS)) == 1) {
         if (pcap_dumper != NULL) {
             pcap_dump_flush(pcap_dumper);
-            thpool_add_work(pool, handler_curl, pcap_dumper);
+
+            uv_work_t *req = malloc(sizeof uv_work_t);
+            req->data = (void *)pcap_dumper;
+            uv_queue_work(loop, req, handler_curl, LAMBDA(void, (uv_work_t *r, int s) { free(r); }));
         }
         pcap_dumper = pcap_dump_fopen(pcap, tmpfile());
     }
     pcap_dump((unsigned char *)pcap_dumper, pcap_pkthdr, bytes);
 }
 
-void handler_curl(void *arg) {
-    FILE *fp = (FILE *)arg;
+void handler_curl(uv_work_t *req) {
+    FILE *fp = (FILE *)req->data;
 
     struct stat stat;
     fstat(fileno(fp), &stat);

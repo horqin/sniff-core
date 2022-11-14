@@ -8,13 +8,13 @@
 192.168.157.130 centos
 ```
 
-* windows配置
+* Windows 配置
 
 安装 OpenJDK 11、Maven。
 
 * Debian 配置
 
-安装 Clang、GNU Make。
+安装 Python。
 
 * CentOS 配置
 
@@ -28,31 +28,31 @@
 
 ```
 $ cd sniff-srv/docker
-$ docker compose up -d
+$ docker compose up -d # 启动 Docker 服务
 ```
 
 * MySQL 配置
 
 ```
 $ cd sniff-src/sql
-$ mysqladmin -hcentos -uroot -p create db
+$ mysqladmin -hcentos -uroot -p create db # （1）创建数据库、数据表
 $ mysql -hcentos -uroot -p db < db.sql
-$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');"
+$ mysql -hcentos -uroot -p db -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:8080/split');" # （2）插入示例配置
 ```
 
 * Debian 配置
 
 ```
 $ cd sniff-src/python
-$ pip install flask torch pytorch_lightning redis
-$ python main.py
+$ pip install flask torch pytorch_lightning redis # （1）安装依赖
+$ python main.py # （2）启动 Flask 服务
 ```
 
 * Windows 配置
 
 ```
 $ cd sniff-srv/java
-$ mvn spring-boot:run
+$ mvn spring-boot:run # 启动 Spring Boot 服务
 ```
 
 ## 客户端
@@ -61,8 +61,9 @@ $ mvn spring-boot:run
 
 ```
 $ cd sniff-cli
-$ sudo apt install libcjson-dev libcurl4-openssl-dev libpcap-dev libsodium-dev libzookeeper-mt-dev
-$ make && sudo ZK_HOST=centos:2181 ZK_PATH=/configure/cli-01 ./sniff
+$ sudo apt install clang make libcjson-dev libcurl4-openssl-dev libpcap-dev libsodium-dev libzookeeper-mt-dev # （1）安装依赖
+$ make # （2）编译客户端
+$ sudo ZK_HOST=centos:2181 ZK_PATH=/configure/cli-01 ./sniff # （3）启动客户端
 ```
 
 # 运行结果

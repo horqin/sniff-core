@@ -6,7 +6,6 @@ import io.pkts.packet.IPv4Packet;
 import io.pkts.packet.IPv6Packet;
 import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
-import org.sniff.constant.PacketConstant;
 import org.sniff.entity.Session;
 import org.sniff.service.SplitService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -27,6 +26,8 @@ public class SplitServiceImpl implements SplitService {
 
     @Value("${config.delay}")
     private Long delay;
+
+    private final Long MAX_COUNT = 100L;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -58,23 +59,20 @@ public class SplitServiceImpl implements SplitService {
             String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);
             double score = (double) packet.getArrivalTime();
 
-            Long count;
-            if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) == 0) {
+            Long count = stringRedisTemplate.opsForZSet().size("session::" + key);
+            if (count < MAX_COUNT) {
                 // 添加延迟队列，保证网络流量一定得到处理
-                rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
-                    m.getMessageProperties().getHeaders().put("x-delay", delay);
-                    return m;
-                });
-            } else if (count > PacketConstant.MIN_COUNT
-                    && !stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
-                // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
-                // 特殊情况：done-session-entry 集合还未创建，此时当作尚未进行分析
-                rabbitTemplate.convertAndSend("session-queue", key);
-            }
-
-            // 转储 Redis 中的 zSet
-            if (count < PacketConstant.MAX_COUNT) {
+                if (count == 0) {
+                    rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
+                        m.getMessageProperties().getHeaders().put("x-delay", delay);
+                        return m;
+                    });
+                }
+                // 转储 Redis 中的 zSet
                 stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
+            } else if (!stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
+                // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
+                rabbitTemplate.convertAndSend("session-queue", key);
             }
 
             return true;

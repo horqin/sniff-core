@@ -165,7 +165,7 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
         if (pcap_dumper != NULL) {
             pcap_dump_flush(pcap_dumper);
 
-            uv_work_t *req = malloc(sizeof uv_work_t);
+            uv_work_t *req = malloc(sizeof(uv_work_t));
             req->data = (void *)pcap_dumper;
             uv_queue_work(loop, req, handler_curl, LAMBDA(void, (uv_work_t *r, int s) { free(r); }));
         }

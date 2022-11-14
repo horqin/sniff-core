@@ -17,6 +17,10 @@
 
 #include "utils/thpool.h"
 
+
+/*
+ * 监视器部分
+ */
 static int pid;
 
 static char device[64];
@@ -47,32 +51,7 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
-    char buf[256];
-    int buf_size = sizeof buf;
-    int rc;
-    if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
-#ifdef _DEBUG
-        switch (rc) {
-        case ZNONODE:
-            fprintf(stderr, "zoo_wget: the node does not exist\n");
-            break;
-        case ZNOAUTH:
-            fprintf(stderr, "zoo_wget: the client does not have permission\n");
-            break;
-        case ZBADARGUMENTS:
-            fprintf(stderr, "zoo_wget: invalid input parameters\n");
-            break;
-        default:
-            fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory\n");
-        }
-#endif
-        exit(1);
-    }
-    cJSON *obj = cJSON_Parse(buf);
-    strcpy(device, cJSON_GetObjectItem(obj, "device")->valuestring);
-    strcpy(filter, cJSON_GetObjectItem(obj, "filter")->valuestring);
-    strcpy(server, cJSON_GetObjectItem(obj, "server")->valuestring);
-    cJSON_Delete(obj);
+    watcher(zh, 0, 0, path, NULL);
 
     for (;;) {
         if ((pid = fork()) == 0) service();
@@ -113,9 +92,18 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     strcpy(server, cJSON_GetObjectItem(obj, "server")->valuestring);
     cJSON_Delete(obj);
 
-    kill(pid, SIGINT);
+    static int i = 0;
+    if (i == 0) {
+        i = 1;
+    } else {
+        kill(pid, SIGINT);
+    }
 }
 
+
+/*
+ * 嗅探器部分
+ */
 #define NCPUS 4
 #define NPKTS 100
 

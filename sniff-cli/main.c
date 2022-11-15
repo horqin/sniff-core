@@ -15,7 +15,6 @@
 #include <cjson/cJSON.h>
 #include <curl/curl.h>
 #include <pcap/pcap.h>
-#include <sodium/utils.h>
 #include <uv.h>
 #include <zookeeper/zookeeper.h>
 

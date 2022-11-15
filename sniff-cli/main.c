@@ -1,6 +1,6 @@
 #define _GNU_SOURCE
 
-#define LAMBDA(r, f) ({r _ f _;})
+#define LAMBDA(r, p) ({r _ p _;})
 
 #include <signal.h>
 #include <stdio.h>
@@ -128,7 +128,7 @@ static void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkth
 static void handler_curl(uv_work_t *req);
 
 void service() {
-    // CURL 客户端全局初始化
+    // CURL 全局初始化
     curl_global_init(CURL_GLOBAL_ALL);
 
     // 创建线程池
@@ -183,7 +183,7 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
     static pcap_dumper_t *pcap_dumper = NULL;
 
     // 每收集 NPKTS 份数据包，便向目标服务器上传
-    // 注意：存储在临时文件中，当关闭文件描述符或者进程结束时，自动删除
+    // 注意：存储在临时文件中，当关闭文件或者进程结束时，自动删除
     static int i = 0;
     if ((i = ((i + 1) % NPKTS)) == 1) {
         if (pcap_dumper != NULL) {
@@ -201,11 +201,11 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
 void handler_curl(uv_work_t *req) {
     FILE *fp = (FILE *)req->data;
 
-    // 检索临时文件的大小
+    // 查询临时文件的大小
     struct stat stat;
     fstat(fileno(fp), &stat);
 
-    // 生成临时文件对应的内存映射区域
+    // 生成临时文件对应的内存映射
     void *ptr;
     if ((ptr = mmap(NULL, stat.st_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
 #ifdef _DEBUG
@@ -239,9 +239,9 @@ void handler_curl(uv_work_t *req) {
     curl_slist_free_all(curl_slist);
     curl_easy_cleanup(curl);
     
-    // 关闭内存映射区域
+    // 关闭内存映射
     munmap(ptr, stat.st_size);
 
-    // 关闭临时文件的文件描述符，从而自动删除文件
+    // 关闭临时文件，从而实现文件自动删除
     fclose(fp);
 }

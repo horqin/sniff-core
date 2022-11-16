@@ -2,13 +2,13 @@ version: '2'
 
 services:
   # sql
-  mysql:
+  mysql: # 开启 binlog 功能
     image: mysql:8.0.29
     ports:
       - 3306:3306
     volumes:
       - ./conf/my.cnf:/etc/mysql/my.cnf
-      - ./data/mysql/:/var/lib/mysql/
+      - ./data/mysql/:/var/lib/mysql/ # MySQL 持久化
     environment:
       - MYSQL_ROOT_PASSWORD=root
   canal:
@@ -35,7 +35,7 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - ./data/redis/:/data/
+      - ./data/redis/:/data/ # Redis 持久化
     command: redis-server --appendonly yes
   zookeeper:
     image: zookeeper
@@ -43,7 +43,7 @@ services:
       - 2181:2181
 
   # mq
-  rabbitmq:
+  rabbitmq: # 开启 delayed_message_exchange 扩展
     image: rabbitmq:3.11.1-management
     ports:
       - 5672:5672

@@ -37,7 +37,6 @@ public class SplitServiceImpl implements SplitService {
 
     @Override
     public void split(InputStream inputStream) throws IOException {
-        // 解析网络流量
         Pcap.openStream(inputStream).loop(packet -> {
             // 无法解析，跳过
             if (!(packet.hasProtocol(Protocol.IPv4) || packet.hasProtocol(Protocol.IPv6))
@@ -45,7 +44,7 @@ public class SplitServiceImpl implements SplitService {
                 return true;
             }
 
-            // 解析源和目的域名
+            // 解析网络流量
             IPPacket header = packet.hasProtocol(Protocol.IPv4)
                     ? (IPv4Packet) packet.getPacket(Protocol.IPv4)
                     : (IPv6Packet) packet.getPacket(Protocol.IPv6);
@@ -53,9 +52,10 @@ public class SplitServiceImpl implements SplitService {
                     ? (TransportPacket) packet.getPacket(Protocol.TCP)
                     : (TransportPacket) packet.getPacket(Protocol.UDP);
 
-            // 生成 key、value、score
-            String key = Session.encode(payload.getProtocol().getName(), header.getSourceIP(),
-                    payload.getSourcePort(), header.getDestinationIP(), payload.getDestinationPort());
+            // 生成 key、value、score，其中，key 为五元组生成且唯一；value 为负载；score 为到达时刻
+            String key = Session.encode(payload.getProtocol().getName(),
+                    header.getSourceIP(), payload.getSourcePort(),
+                    header.getDestinationIP(), payload.getDestinationPort());
             String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);
             double score = (double) packet.getArrivalTime();
 

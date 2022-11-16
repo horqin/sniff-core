@@ -27,7 +27,7 @@ public class SplitServiceImpl implements SplitService {
     @Value("${config.delay}")
     private Long delay;
 
-    private final Long MAX_COUNT = 100L;
+    private final Long MAX_COUNT = 24L;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;

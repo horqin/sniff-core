@@ -64,3 +64,7 @@ if (count < MAX_COUNT) {
 2）Session Listener 收到消息，首先通过 Feign 使用部署在 Flask 的 PyTorch 模型（Forecat App）进行预测，然后写入预测结果到 MySQL 中。
 
 注意：项目设计的算法能够保证一定对网络流量进行分析，并且尽量具备实时的特性。
+
+# 安装
+
+[INSTALL.md](./INSTALL.md)

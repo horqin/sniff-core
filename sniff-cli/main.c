@@ -26,14 +26,14 @@ static void service();
  */
 static int pid; // 子进程 PID
 
-static char device[64]; // 监听的网络设备
+static char device[64]; // 嗅探的网络设备
 static char filter[64]; // BPF 表达式
-static char server[64]; // 上传网络流量的目标服务器
+static char server[64]; // 服务器的地址
 
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
-    // 解析全局变量
+    // 获取 ZK 数据库的地址和路径
     char *host, *path;
     if ((host = getenv("ZK_HOST")) == NULL || (path = getenv("ZK_PATH")) == NULL) {
 #ifdef _DEBUG
@@ -47,7 +47,7 @@ int main(int argc, const char *argv[]) {
     close(0), close(1), close(2);
 #endif
 
-    // 连接 ZK 服务器
+    // 连接 ZK 数据库
     zhandle_t *zh;
     if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
 #ifdef _DEBUG
@@ -56,7 +56,7 @@ int main(int argc, const char *argv[]) {
         exit(1);
     }
 
-    // 获取 ZK 服务器指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
+    // 获取 ZK 数据库指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
     watcher(zh, 0, 0, path, NULL);
 
     // 创建子进程之后，主进程等待子进程退出
@@ -78,7 +78,7 @@ int main(int argc, const char *argv[]) {
 void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     char buf[256];
     int buf_size = sizeof buf;
-    // 获取 ZK 服务器指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
+    // 获取 ZK 数据库指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
     int rc;
     if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
 #ifdef _DEBUG
@@ -132,8 +132,7 @@ void service() {
     curl_global_init(CURL_GLOBAL_ALL);
 
     // 创建线程池
-    // 注意：线程池创建期间屏蔽信号，使得子线程继承主线程的信号向量。
-    // 从而，主线程接收信号，子线程屏蔽信号，只有主线程能够触发相应的操作
+    // 注意：线程池创建期间屏蔽信号，使得子线程在派生后屏蔽信号，从而只有主线程能够触发相应的操作
     sigset_t newset, oldset;
     sigemptyset(&newset);
     sigaddset(&newset, SIGINT);
@@ -166,7 +165,7 @@ void service() {
 }
 
 void handler_ctrl(int sig) {
-    // 首先，关闭 PCAP 句柄，使得线程池中不再持续堆积任务
+    // 首先，关闭 PCAP 句柄，使得在线程池中不再持续堆积任务
     pcap_close(pcap);
 
     // 然后，执行线程池中尚未完成的任务
@@ -176,6 +175,7 @@ void handler_ctrl(int sig) {
     curl_global_cleanup();
 
     // 最后，退出
+    // 注意：在退出时，尚未处理的临时文件将会自动删除
     exit(0);
 }
 
@@ -183,7 +183,7 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
     static pcap_dumper_t *pcap_dumper = NULL;
 
     // 每收集 NPKTS 份数据包，便向目标服务器上传
-    // 注意：存储在临时文件中，当关闭文件或者进程结束时，自动删除
+    // 注意：存储在临时文件中，当文件关闭或者进程结束时，自动删除
     static int i = 0;
     if ((i = ((i + 1) % NPKTS)) == 1) {
         if (pcap_dumper != NULL) {

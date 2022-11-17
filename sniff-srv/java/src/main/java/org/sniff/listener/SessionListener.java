@@ -34,12 +34,7 @@ public class SessionListener {
         String session = new String(message.getBody(), StandardCharsets.UTF_8);
 
         // 检查是否存在
-        if (stringRedisTemplate.execute(new DefaultRedisScript<>(
-                "if redis.call('SISMEMBER', KEYS[1], KEYS[2]) == 0 then" +
-                "  redis.call('SADD', KEYS[1], KEYS[2]);" +
-                "  return true;" +
-                "end;" +
-                "return false;", Boolean.class), Arrays.asList("done-session-entry", session))) {
+        if (stringRedisTemplate.opsForSet().add("done-session-entry", session) == 0) {
             // 若是并不存在，那么在日志中记录预测结果
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {

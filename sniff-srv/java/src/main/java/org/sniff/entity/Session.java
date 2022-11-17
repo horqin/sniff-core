@@ -36,8 +36,7 @@ public class Session {
 
     public static Session decode(String session, Integer forecast, Date createDate) {
         String[] s = session.split("@");
-        return new Session(null, s[0],
-                s[1], Integer.parseInt(s[2]), s[3], Integer.parseInt(s[4]),
+        return new Session(null, s[0], s[1], Integer.parseInt(s[2]), s[3], Integer.parseInt(s[4]),
                 forecast, createDate);
     }
 }

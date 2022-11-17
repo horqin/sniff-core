@@ -2,8 +2,8 @@ package org.sniff.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.sniff.entity.Configure;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
+@Repository
 public interface ConfigureDao extends BaseMapper<Configure> {
 }

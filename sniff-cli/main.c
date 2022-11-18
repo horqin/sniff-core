@@ -33,7 +33,7 @@ static char server[64]; // 服务器的地址
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
-    zoo_set_debug_level(0);
+    zoo_set_log_stream(fopen("/dev/null", "w"));
 
     // 获取 ZK 数据库的地址和路径
     char *host, *path;
@@ -50,7 +50,13 @@ int main(int argc, const char *argv[]) {
 #endif
 
     // 连接 ZK 数据库
-    zhandle_t *zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0);
+    zhandle_t *zh;
+    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
+#ifndef _DEBUG
+        perror("zookeeper_init");
+        exit(1);
+#endif
+    }
 
     // 获取 ZK 数据库指定节点记录的配置信息，并且监视器的子线程持续监听是否发生配置信息的更新
     watcher(zh, 0, 0, path, NULL);

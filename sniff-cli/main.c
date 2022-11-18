@@ -49,7 +49,7 @@ int main(int argc, const char *argv[]) {
 
     // 连接 ZK 数据库
     zhandle_t *zh;
-    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, ZOO_NO_LOG_CLIENTENV)) == NULL) {
+    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
 #ifndef _DEBUG
         perror("zookeeper_init");
         exit(1);

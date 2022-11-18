@@ -50,13 +50,7 @@ int main(int argc, const char *argv[]) {
 #endif
 
     // 连接 ZK 数据库
-    zhandle_t *zh;
-    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
-#ifdef _DEBUG
-        perror("zookeeper_init");
-#endif
-        exit(1);
-    }
+    zhandle_t *zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0);
 
     // 获取 ZK 数据库指定节点记录的配置信息，并且监视器的子线程持续监听是否发生配置信息的更新
     watcher(zh, 0, 0, path, NULL);

@@ -32,7 +32,7 @@ public class SessionListener {
         String session = new String(message.getBody(), StandardCharsets.UTF_8);
 
         // 检查是否存在
-        if (stringRedisTemplate.opsForSet().add("done-session-entry", session) == 0) {
+        if (stringRedisTemplate.opsForSet().add("done-session-entry", session) == 1) {
             // 若是并不存在，那么占位，并且在日志中记录预测结果
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {

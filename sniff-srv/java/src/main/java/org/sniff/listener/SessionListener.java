@@ -1,6 +1,6 @@
 package org.sniff.listener;
 
-import org.sniff.dao.SessionDao;
+import org.sniff.mapper.SessionMapper;
 import org.sniff.entity.Session;
 import org.sniff.feign.ForecastFeign;
 import org.sniff.utils.R;
@@ -23,7 +23,7 @@ public class SessionListener {
     private ForecastFeign forecastFeign;
 
     @Resource
-    private SessionDao sessionDao;
+    private SessionMapper sessionMapper;
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue("session-queue"),
             exchange = @Exchange(type = "x-delayed-message", value = "session-exchange",
@@ -37,7 +37,7 @@ public class SessionListener {
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {
                 Integer forecast = (Integer) r.get("data");
-                sessionDao.insert(Session.decode(session, forecast, new Date()));
+                sessionMapper.insert(Session.decode(session, forecast, new Date()));
             }
         }
     }

@@ -169,7 +169,7 @@ void handler_pcap(unsigned char *arg, const struct pcap_pkthdr *pcap_pkthdr, con
     static pcap_dumper_t *pcap_dumper = NULL;
 
     // 每收集 NPKTS 份数据包，便向目标服务器上传
-    // 注意：存储在临时文件中，当文件关闭或者进程结束时，自动删除
+    // 注意：网络流量存储在临时文件中，当文件关闭或者进程结束时，自动删除
     static int i = 0;
     if ((i = ((i + 1) % NPKTS)) == 1) {
         if (pcap_dumper != NULL) {

@@ -24,7 +24,7 @@ static void service();
 /*
  * 监视器部分
  */
-static int pid; // 子进程 PID
+static int pid; // 嗅探器 PID
 
 static char device[64]; // 嗅探的网络设备
 static char filter[64]; // BPF 表达式
@@ -42,24 +42,22 @@ int main(int argc, const char *argv[]) {
         exit(-1);
     }
 
-#ifndef _DEBUG
-    // 关闭标准 I/O，RELEASE 版本生效
-    close(0), close(1), close(2);
-#endif
+    // 设置 ZK 客户端的 DEBUG 等级，禁止输出
+    zoo_set_debug_level(0);
 
     // 连接 ZK 数据库
     zhandle_t *zh;
     if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
 #ifdef _DEBUG
-        perror("zookeeper_init");
+        fprintf(stderr, "%d: zookeeper_init\n", __LINE__);
 #endif
         exit(1);
     }
 
-    // 获取 ZK 数据库指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
+    // 获取 ZK 数据库指定节点记录的配置信息，并且监视器的子线程持续监听是否发生配置信息的更新
     watcher(zh, 0, 0, path, NULL);
 
-    // 创建子进程之后，主进程等待子进程退出
+    // 创建嗅探器之后，监听器的主线程等待嗅探器退出
     // 注意：`fork` 函数只会复制主进程的主线程的虚拟内存，因此子进程不会触发 `watcher` 函数
     for (;;) {
         // 子进程
@@ -68,33 +66,21 @@ int main(int argc, const char *argv[]) {
         // 主进程
         int stat;
         (void)waitpid(pid, &stat, 0);
-        // 如果子进程错误地退出，那么主进程同样退出
+        // 如果嗅探器错误地退出，那么监听器同样退出
         if (WIFEXITED(stat) && WEXITSTATUS(stat)) {
             exit(1);
         }
     }
 }
 
+// 注意：监视器的主线程只会执行一次，相反，子线程则会执行多次
 void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     char buf[256];
     int buf_size = sizeof buf;
-    // 获取 ZK 数据库指定节点记录的配置信息，并且主进程的子线程持续监听是否发生配置信息的变化
-    int rc;
-    if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
+    // 获取配置信息
+    if (zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL) != ZOK) {
 #ifdef _DEBUG
-        switch (rc) {
-        case ZNONODE:
-            fprintf(stderr, "zoo_wget: the node does not exist\n");
-            break;
-        case ZNOAUTH:
-            fprintf(stderr, "zoo_wget: the client does not have permission\n");
-            break;
-        case ZBADARGUMENTS:
-            fprintf(stderr, "zoo_wget: invalid input parameters\n");
-            break;
-        default:
-            fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory\n");
-        }
+        fprintf(stderr, "%d: zoo_wget\n", __LINE__);
 #endif
         exit(1);
     }
@@ -105,7 +91,7 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     strcpy(server, cJSON_GetObjectItem(obj, "server")->valuestring);
     cJSON_Delete(obj);
 
-    // 此处只有首次执行时不会进行，作用是结束子进程
+    // 此处只有监视器的子线程才会执行，其作用是结束嗅探器的运行
     static int i = 0;
     if (i == 0) {
         i = 1;
@@ -149,7 +135,7 @@ void service() {
     if (pcap_lookupnet(device, &addr, &mask, errbuf) == PCAP_ERROR ||
             (pcap = pcap_open_live(device, 65535, 0, 200, errbuf)) == NULL) {
 #ifdef _DEBUG
-        fprintf(stderr, "pcap_lookupnet, pcap_open_live: %s", errbuf);
+        fprintf(stderr, "%d: pcap_lookupnet, pcap_open_live\n", __LINE__);
 #endif
         exit(1);
     }
@@ -157,7 +143,7 @@ void service() {
     if (pcap_compile(pcap, &bpf_program, filter, 0, addr) == PCAP_ERROR ||
             pcap_setfilter(pcap, &bpf_program) == PCAP_ERROR) {
 #ifdef _DEBUG
-        pcap_perror(pcap, "pcap_compile, pcap_setfilter");
+        fprintf(stderr, "%d: pcap_compile, pcap_setfilter\n", __LINE__);
 #endif
         exit(1);
     }
@@ -209,7 +195,7 @@ void handler_curl(uv_work_t *req) {
     void *ptr;
     if ((ptr = mmap(NULL, stat.st_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
 #ifdef _DEBUG
-        perror("mmap");
+        fprintf(stderr, "%d: mmap\n", __LINE__);
 #endif
         exit(1);
     }
@@ -229,16 +215,15 @@ void handler_curl(uv_work_t *req) {
     curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_easy_setopt(curl, CURLOPT_FTP_SKIP_PASV_IP, 1L);
     curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
-    CURLcode rc;
-    if ((rc = curl_easy_perform(curl)) != CURLE_OK) {
+    if (curl_easy_perform(curl) != CURLE_OK) {
 #ifdef _DEBUG
-        fprintf(stderr, "curl_easy_perform: %s\n", curl_easy_strerror(rc));
+        fprintf(stderr, "%d: curl_easy_perform\n", __LINE__);
 #endif
         exit(1);
     }
     curl_slist_free_all(curl_slist);
     curl_easy_cleanup(curl);
-    
+
     // 关闭内存映射
     munmap(ptr, stat.st_size);
 

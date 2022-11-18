@@ -42,15 +42,16 @@ int main(int argc, const char *argv[]) {
         exit(-1);
     }
 
-    // 设置 ZK 客户端的 DEBUG 等级，禁止输出
+    // 设置 ZK 客户端的 DEBUG 等级
+#ifdef _DEBUG
+    zoo_set_debug_level(3);
+#else
     zoo_set_debug_level(0);
+#endif
 
     // 连接 ZK 数据库
     zhandle_t *zh;
     if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
-#ifdef _DEBUG
-        fprintf(stderr, "%d: zookeeper_init\n", __LINE__);
-#endif
         exit(1);
     }
 
@@ -79,9 +80,6 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     int buf_size = sizeof buf;
     // 获取配置信息
     if (zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL) != ZOK) {
-#ifdef _DEBUG
-        fprintf(stderr, "%d: zoo_wget\n", __LINE__);
-#endif
         exit(1);
     }
     // 解析配置信息，记录到全局变量中
@@ -135,7 +133,7 @@ void service() {
     if (pcap_lookupnet(device, &addr, &mask, errbuf) == PCAP_ERROR ||
             (pcap = pcap_open_live(device, 65535, 0, 200, errbuf)) == NULL) {
 #ifdef _DEBUG
-        fprintf(stderr, "%d: pcap_lookupnet, pcap_open_live\n", __LINE__);
+        fprintf(stderr, "pcap_lookupnet, pcap_open_live: %s\n", errbuf);
 #endif
         exit(1);
     }
@@ -143,7 +141,7 @@ void service() {
     if (pcap_compile(pcap, &bpf_program, filter, 0, addr) == PCAP_ERROR ||
             pcap_setfilter(pcap, &bpf_program) == PCAP_ERROR) {
 #ifdef _DEBUG
-        fprintf(stderr, "%d: pcap_compile, pcap_setfilter\n", __LINE__);
+        pcap_perror(pcap, "pcap_compile, pcap_compile");
 #endif
         exit(1);
     }
@@ -195,7 +193,7 @@ void handler_curl(uv_work_t *req) {
     void *ptr;
     if ((ptr = mmap(NULL, stat.st_size, PROT_READ, MAP_PRIVATE, fileno(fp), 0)) == (void *)-1) {
 #ifdef _DEBUG
-        fprintf(stderr, "%d: mmap\n", __LINE__);
+        perror("mmap");
 #endif
         exit(1);
     }
@@ -215,9 +213,10 @@ void handler_curl(uv_work_t *req) {
     curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "POST");
     curl_easy_setopt(curl, CURLOPT_FTP_SKIP_PASV_IP, 1L);
     curl_easy_setopt(curl, CURLOPT_TCP_KEEPALIVE, 1L);
-    if (curl_easy_perform(curl) != CURLE_OK) {
+    CURLcode rc;
+    if ((rc = curl_easy_perform(curl)) != CURLE_OK) {
 #ifdef _DEBUG
-        fprintf(stderr, "%d: curl_easy_perform\n", __LINE__);
+        fprintf(stderr, "curl_easy_perform: %s\n", curl_easy_strerror(rc));
 #endif
         exit(1);
     }

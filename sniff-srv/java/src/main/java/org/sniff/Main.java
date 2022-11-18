@@ -10,8 +10,8 @@ import org.springframework.kafka.annotation.EnableKafka;
 @EnableFeignClients
 @EnableRabbit
 @EnableKafka
-@MapperScan("org.sniff.dao")
-@SpringBootApplication(scanBasePackages = "org.sniff")
+@MapperScan("org.sniff.mapper")
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);

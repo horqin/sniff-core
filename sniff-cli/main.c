@@ -33,7 +33,7 @@ static char server[64]; // 服务器的地址
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
-    zoo_set_log_stream(fopen("/dev/null", "w"));
+    zoo_set_log_stream(NULL);
 
     // 获取 ZK 数据库的地址和路径
     char *host, *path;
@@ -89,7 +89,8 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
         case ZNONODE: fprintf(stderr, "zoo_wget: the node does not exist"); break;
         case ZNOAUTH: fprintf(stderr, "zoo_wget: the client does not have permission"); break;
         case ZBADARGUMENTS: fprintf(stderr, "zoo_wget: invalid input parameters"); break;
-        case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory");
+        case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: zhandle state is either in ZOO_SESSION_EXPIRED_STATE or ZOO_AUTH_FAILED_STATE"); break;
+        case ZMARSHALLINGERROR: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory");
         }
         perror("zookeeper_init");
 #endif

@@ -33,7 +33,9 @@ static char server[64]; // 服务器的地址
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
-    zoo_set_log_stream(NULL);
+    // 关闭 ZK 输出
+    zoo_set_debug_level((ZooLogLevel)0);
+    zoo_set_log_stream(fopen("/dev/null", "w"));
 
     // 获取 ZK 数据库的地址和路径
     char *host, *path;

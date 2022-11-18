@@ -33,10 +33,6 @@ static char server[64]; // 服务器的地址
 static void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx);
 
 int main(int argc, const char *argv[]) {
-    // 关闭 ZK 输出
-    zoo_set_debug_level((ZooLogLevel)0);
-    zoo_set_log_stream(fopen("/dev/null", "w"));
-
     // 获取 ZK 数据库的地址和路径
     char *host, *path;
     if ((host = getenv("ZK_HOST")) == NULL || (path = getenv("ZK_PATH")) == NULL) {
@@ -53,7 +49,7 @@ int main(int argc, const char *argv[]) {
 
     // 连接 ZK 数据库
     zhandle_t *zh;
-    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
+    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, ZOO_NO_LOG_CLIENTENV)) == NULL) {
 #ifndef _DEBUG
         perror("zookeeper_init");
         exit(1);
@@ -88,11 +84,11 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
 #ifdef _DEBUG
         switch (rc) {
-        case ZNONODE: fprintf(stderr, "zoo_wget: the node does not exist"); break;
-        case ZNOAUTH: fprintf(stderr, "zoo_wget: the client does not have permission"); break;
-        case ZBADARGUMENTS: fprintf(stderr, "zoo_wget: invalid input parameters"); break;
-        case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: zhandle state is either in ZOO_SESSION_EXPIRED_STATE or ZOO_AUTH_FAILED_STATE"); break;
-        case ZMARSHALLINGERROR: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory");
+        case ZNONODE: fprintf(stderr, "zoo_wget: the node does not exist\n"); break;
+        case ZNOAUTH: fprintf(stderr, "zoo_wget: the client does not have permission\n"); break;
+        case ZBADARGUMENTS: fprintf(stderr, "zoo_wget: invalid input parameters\n"); break;
+        case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: zhandle state is either in ZOO_SESSION_EXPIRED_STATE or ZOO_AUTH_FAILED_STATE\n"); break;
+        case ZMARSHALLINGERROR: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory\n");
         }
         perror("zookeeper_init");
 #endif

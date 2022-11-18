@@ -57,8 +57,8 @@ public class SplitServiceImpl implements SplitService {
             double score = (double) packet.getArrivalTime();
 
             Long count = stringRedisTemplate.opsForZSet().size("session::" + key);
-            if (count < MAX_COUNT) {
-                // 添加延迟队列，保证网络流量一定得到处理
+            if (count < MAX_COUNT) { 
+                // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                 if (count == 0) {
                     rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
                         m.getMessageProperties().getHeaders().put("x-delay", delay);

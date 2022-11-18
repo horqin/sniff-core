@@ -33,7 +33,7 @@ public class SessionListener {
 
         // 检查是否存在
         if (stringRedisTemplate.opsForSet().add("done-session-entry", session) == 0) {
-            // 若是并不存在，那么在日志中记录预测结果
+            // 若是并不存在，那么占位，并且在日志中记录预测结果
             R r;
             if ((r = forecastFeign.forecast(session)) != null) {
                 Integer forecast = (Integer) r.get("data");

@@ -42,11 +42,9 @@ int main(int argc, const char *argv[]) {
         exit(-1);
     }
 
-    // 设置 ZK 客户端的 DEBUG 等级
-#ifdef _DEBUG
-    zoo_set_debug_level(3);
-#else
-    zoo_set_debug_level(0);
+    // 关闭标准 IO，RELEASE 版本生效
+#ifndef _DEBUG
+    close(0), close(1), close(2);
 #endif
 
     // 连接 ZK 数据库

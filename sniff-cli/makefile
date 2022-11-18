@@ -1,8 +1,8 @@
 CC = gcc
-CFLAGS = -Og -D_DEBUG
+CFLAGS = -Og
 LIBS = -pthread -lcjson -lcurl -lpcap -luv -lzookeeper_mt
 
 all:
-	$(CC) $(CFLAGS) $(LIBS) -o sniff main.c
+	$(CC) -D_DEBUG $(CFLAGS) $(LIBS) -o sniff main.c
 clean:
 	rm -f sniff

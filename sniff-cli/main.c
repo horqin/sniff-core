@@ -50,6 +50,9 @@ int main(int argc, const char *argv[]) {
     // 连接 ZK 数据库
     zhandle_t *zh;
     if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
+#ifdef _DEBUG
+        perror("zookeeper_init");
+#endif
         exit(1);
     }
 
@@ -77,7 +80,17 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
     char buf[256];
     int buf_size = sizeof buf;
     // 获取配置信息
-    if (zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL) != ZOK) {
+    int rc;
+    if ((rc = zoo_wget(zh, path, watcher, NULL, buf, &buf_size, NULL)) != ZOK) {
+#ifdef _DEBUG
+        switch (rc) {
+        case ZNONODE: fprintf(stderr, "zoo_wget: the node does not exist"); break;
+        case ZNOAUTH: fprintf(stderr, "zoo_wget: the client does not have permission"); break;
+        case ZBADARGUMENTS: fprintf(stderr, "zoo_wget: invalid input parameters"); break;
+        case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory");
+        }
+        perror("zookeeper_init");
+#endif
         exit(1);
     }
     // 解析配置信息，记录到全局变量中

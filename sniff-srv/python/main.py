@@ -56,4 +56,3 @@ def forecast(session):
     pred = int(model(torch.LongTensor([convert(session)]))[0])
     return jsonify({ 'data': pred })
 
-app.run(host='0.0.0.0', debug=True)

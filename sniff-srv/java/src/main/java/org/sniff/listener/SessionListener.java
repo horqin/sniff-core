@@ -1,5 +1,7 @@
 package org.sniff.listener;
 
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.sniff.mapper.SessionMapper;
 import org.sniff.entity.Session;
 import org.sniff.feign.ForecastFeign;
@@ -18,6 +20,9 @@ public class SessionListener {
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
+
+    @Resource
+    private RedissonClient redissonClient;
 
     @Resource
     private ForecastFeign forecastFeign;
@@ -39,6 +44,10 @@ public class SessionListener {
                 Integer forecast = (Integer) r.get("data");
                 sessionMapper.insert(Session.decode(session, forecast, new Date()));
             }
+            RLock lock = redissonClient.getLock("lock::session::" + session);
+            lock.lock();
+            stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);
+            lock.unlock();
         }
     }
 }

@@ -39,7 +39,7 @@ $ mysqladmin -hcentos -uroot -p create db # （1）创建数据库、数据表
 $ mysql -hcentos -uroot -p db < db.sql
 $ mysql -hcentos -uroot -p db \
   -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:5678/split');" \
-  # （2）插入示例配置（注意：启动 Windows 系统的 Java 程序之后执行）
+  # （2）插入示例配置（注意：启动 Windows 系统的 Spring Boot 服务之后执行这段代码）
 ```
 
 * Debian 配置
@@ -47,10 +47,9 @@ $ mysql -hcentos -uroot -p db \
 ```
 $ cd sniff-src/python
 $ pip install flask torch pytorch_lightning redis # （1）安装依赖
-$ flask --app main.py run -h 0.0.0.0 -p 5000 > /dev/null 2>&1 & # （2）启动 Flask 服务
-$ flask --app main.py run -h 0.0.0.0 -p 5001 > /dev/null 2>&1 &
-$ flask --app main.py run -h 0.0.0.0 -p 5002 > /dev/null 2>&1 &
-$ flask --app main.py run -h 0.0.0.0 -p 5003 > /dev/null 2>&1 &
+$ for port in (5000 5001 5002 5003) do
+    flask --app main.py run -h 0.0.0.0 -p $port > /dev/null 2>&1 &
+  done # （2）启动 Flask 服务
 ```
 
 * Windows 配置

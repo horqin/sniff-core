@@ -1,6 +1,13 @@
 version: '2'
 
 services:
+  # lb
+  nginx:
+    ports:
+      - 80:80
+    voulmes:
+      - ./conf/nginx.conf:/etc/nginx/nginx.conf
+
   # sql
   mysql: # 开启 binlog 功能
     image: mysql:8.0.29

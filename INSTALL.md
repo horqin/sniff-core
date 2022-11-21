@@ -46,10 +46,8 @@ $ mysql -hcentos -uroot -p db \
 
 ```
 $ cd sniff-src/python
-$ pip install flask torch pytorch_lightning redis # （1）安装依赖
-$ for port in (5000 5001 5002 5003) do
-    flask --app main.py run -h 0.0.0.0 -p $port > /dev/null 2>&1 &
-  done # （2）启动 Flask 服务
+$ python -m pip install flask torch pytorch_lightning redis # （1）安装依赖
+$ python main.py （2）启动 Flask 服务
 ```
 
 * Windows 配置

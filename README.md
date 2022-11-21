@@ -51,21 +51,26 @@
 1）SplitCap Controller 接收网络流量，按照如下代码片段分割网络流量，
 
 ```java
-Long count = stringRedisTemplate.opsForZSet().size("session::" + key);
-if (count < MAX_COUNT) { 
-    // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
-    if (count == 0) {
-        rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
-            m.getMessageProperties().getHeaders().put("x-delay", delay);
-            return m;
-        });
+RLock lock = redissonClient.getLock("lock::session::" + key);
+lock.lock();
+if (!stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
+    Long count = stringRedisTemplate.opsForZSet().size("session::" + key);
+    if (count < MAX_COUNT) {
+        // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
+        if (count == 0) {
+            rabbitTemplate.convertAndSend("session-exchange", "", key, m -> {
+                m.getMessageProperties().getHeaders().put("x-delay", delay);
+                return m;
+            });
+        }
+        // 转储 Redis 中的 zSet
+        stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
+    } else {
+        // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
+        rabbitTemplate.convertAndSend("session-queue", key);
     }
-    // 转储 Redis 中的 zSet
-    stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
-} else if (!stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
-    // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
-    rabbitTemplate.convertAndSend("session-queue", key);
 }
+lock.unlock();
 ```
 
 其中，`key` 为会话的唯一编码，通过五元组（协议，源和目的的 IP 地址和端口号）生成，具有唯一性；`value` 为数据包的负载内容；`score` 为数据包的到达时刻。因此，切割的会话会通过 RabbitMQ 送达 Session Listener，进行网络流量的检测和识别；

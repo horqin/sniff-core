@@ -32,7 +32,8 @@ public class SessionListener {
 
     @RabbitListener(bindings = @QueueBinding(value = @Queue("session-queue"),
             exchange = @Exchange(type = "x-delayed-message", value = "session-exchange",
-                    arguments = @Argument(name = "x-delayed-type", value = "direct"))))
+                    arguments = @Argument(name = "x-delayed-type", value = "direct"))),
+            concurrency = "2")
     public void consume(Message message) {
         String session = new String(message.getBody(), StandardCharsets.UTF_8);
 

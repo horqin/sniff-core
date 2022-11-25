@@ -54,4 +54,4 @@ app = Flask(__name__)
 def forecast(session):
     session = redis.zrevrange('session::' + session, 0, N-1)
     return str(int(model(torch.LongTensor([convert(session)]))[0]))
-app.run(host="0.0.0.0", port=5000, threaded=False, processes=6)
+app.run(host="0.0.0.0", port=5000, threaded=False, processes=6, debug=True)

@@ -8,7 +8,7 @@ import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
-import org.sniff.entity.Session;
+import org.sniff.entity.SessionEntity;
 import org.sniff.service.SplitService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -55,7 +55,7 @@ public class SplitServiceImpl implements SplitService {
                     : (TransportPacket) packet.getPacket(Protocol.UDP);
 
             // 生成 key、value、score，其中，key 为五元组生成且唯一；value 为负载；score 为到达时刻
-            String key = Session.encode(payload.getProtocol().getName(),
+            String key = SessionEntity.encode(payload.getProtocol().getName(),
                     header.getSourceIP(), payload.getSourcePort(),
                     header.getDestinationIP(), payload.getDestinationPort());
             String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);

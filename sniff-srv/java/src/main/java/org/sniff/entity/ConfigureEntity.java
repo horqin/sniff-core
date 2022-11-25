@@ -1,11 +1,13 @@
 package org.sniff.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Configure {
+@TableName("configure")
+public class ConfigureEntity {
 
     // 主键
     private Long    id;

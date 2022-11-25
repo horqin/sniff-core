@@ -32,7 +32,7 @@ class Model(LightningModule):
 
 
 ## 服务
-from flask import Flask, jsonify
+from flask import Flask
 
 # redis
 from redis import Redis
@@ -53,6 +53,5 @@ app = Flask(__name__)
 @app.route('/forecast/<string:session>')
 def forecast(session):
     session = redis.zrevrange('session::' + session, 0, N-1)
-    pred = int(model(torch.LongTensor([convert(session)]))[0])
-    return jsonify({ 'data': pred })
+    return str(int(model(torch.LongTensor([convert(session)]))[0]))
 app.run(host="0.0.0.0", port=5000, threaded=False, processes=6)

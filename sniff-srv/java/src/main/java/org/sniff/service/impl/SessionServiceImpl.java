@@ -37,8 +37,11 @@ public class SessionServiceImpl implements SessionService {
             // 使用锁安全地进行删除
             RLock lock = redissonClient.getLock("lock::session::" + session);
             lock.lock();
-            stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);
-            lock.unlock();
+            try {
+                stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);
+            } finally {
+                lock.unlock();
+            }
         }
     }
 }

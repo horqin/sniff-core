@@ -38,7 +38,7 @@ $ cd sniff-src/sql
 $ mysqladmin -hcentos -uroot -p create db # （1）创建数据库、数据表
 $ mysql -hcentos -uroot -p db < db.sql
 $ mysql -hcentos -uroot -p db \
-  -e "insert into configure values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:5678/splitCap');" \
+  -e "insert into tb_config values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:5678/splitCap');" \
   # （2）插入示例配置（注意：启动 Windows 系统的 Spring Boot 服务之后执行这段代码）
 ```
 

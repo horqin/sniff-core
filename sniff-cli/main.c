@@ -48,13 +48,7 @@ int main(int argc, const char *argv[]) {
 #endif
 
     // 连接 ZK 数据库
-    zhandle_t *zh;
-    if ((zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0)) == NULL) {
-#ifndef _DEBUG
-        perror("zookeeper_init");
-        exit(1);
-#endif
-    }
+    zhandle_t *zh = zookeeper_init(host, NULL, 2000, NULL, NULL, 0);
 
     // 获取 ZK 数据库指定节点记录的配置信息，并且监视器的子线程持续监听是否发生配置信息的更新
     watcher(zh, 0, 0, path, NULL);
@@ -90,7 +84,6 @@ void watcher(zhandle_t *zh, int type, int stat, const char *path, void *ctx) {
         case ZINVALIDSTATE: fprintf(stderr, "zoo_wget: zhandle state is either in ZOO_SESSION_EXPIRED_STATE or ZOO_AUTH_FAILED_STATE\n"); break;
         case ZMARSHALLINGERROR: fprintf(stderr, "zoo_wget: failed to marshall a request; possibly, out of memory\n");
         }
-        perror("zookeeper_init");
 #endif
         exit(1);
     }

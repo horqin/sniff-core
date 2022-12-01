@@ -38,7 +38,7 @@ from flask import Flask
 from redis import Redis
 redis = Redis(host='centos', port=6379)
 # model
-model = Model().load_from_checkpoint('data/model.chk')
+model = Model().load_from_checkpoint('data/model.ckpt')
 # convert
 def convert(session):
     matrix = [[0] * M for _ in range(N)]

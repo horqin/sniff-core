@@ -22,7 +22,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 @Service
-public class SplitCapCapServiceImpl implements SplitCapService {
+public class SplitCapServiceImpl implements SplitCapService {
 
     @Value("${config.delay}")
     private Long delay;

@@ -79,7 +79,7 @@ public class SplitCapCapServiceImpl implements SplitCapService {
             if (count != null) {
                 // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                 if (count == 0L) {
-                    rabbitTemplate.convertAndSend("session-exchange", null, key, msg -> {
+                    rabbitTemplate.convertAndSend("session-exchange", "", key, msg -> {
                         msg.getMessageProperties().getHeaders().put("x-delay", delay);
                         return msg;
                     });

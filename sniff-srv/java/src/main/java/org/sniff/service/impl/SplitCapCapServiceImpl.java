@@ -77,16 +77,16 @@ public class SplitCapCapServiceImpl implements SplitCapService {
             }
 
             if (count != null) {
-                // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                 if (count == 0L) {
+                    // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                     rabbitTemplate.convertAndSend("session-exchange", "", key, msg -> {
                         msg.getMessageProperties().getHeaders().put("x-delay", delay);
                         return msg;
                     });
+                } else if (count == MAX_COUNT) {
+                    // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
+                    rabbitTemplate.convertAndSend("session-queue", key);
                 }
-            } else {
-                // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
-                rabbitTemplate.convertAndSend("session-queue", key);
             }
 
             return true;

@@ -17,14 +17,15 @@ services:
     ports:
       - 11111:11111
     environment:
+      # sql
       - canal.instance.master.address=mysql:3306
       - canal.instance.dbUsername=root
       - canal.instance.dbPassword=root
-      - canal.instance.filter.regex=db.configure
-      # mq configure
+      - canal.instance.filter.regex=db.tb_config
+      # mq
       - canal.serverMode=kafka
       - canal.mq.servers=kafka:9092
-      - canal.mq.topic=configure-topic
+      - canal.mq.topic=config-topic
       - canal.mq.flatMessage=true
     depends_on:
       - mysql

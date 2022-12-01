@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `configure`
+-- Table structure for table `tb_config`
 --
 
-DROP TABLE IF EXISTS `configure`;
+DROP TABLE IF EXISTS `tb_config`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `configure` (
+CREATE TABLE `tb_config` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `name` varchar(32) DEFAULT NULL COMMENT '名称',
   `device` varchar(8) DEFAULT NULL COMMENT '设备',
@@ -34,13 +34,13 @@ CREATE TABLE `configure` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `session`
+-- Table structure for table `tb_session`
 --
 
-DROP TABLE IF EXISTS `session`;
+DROP TABLE IF EXISTS `tb_session`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `session` (
+CREATE TABLE `tb_session` (
   `id` bigint NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `protocol` varchar(8) DEFAULT NULL COMMENT '协议',
   `src_ip` varchar(32) DEFAULT NULL COMMENT '源 IP',

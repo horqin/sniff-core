@@ -6,9 +6,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@TableName("configure")
-public class ConfigureEntity {
-
+@TableName("tb_config")
+public class ConfigEntity {
     // 主键
     private Long    id;
     // 名称

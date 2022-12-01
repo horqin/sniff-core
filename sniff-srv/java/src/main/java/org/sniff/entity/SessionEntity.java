@@ -8,9 +8,8 @@ import java.util.Date;
 
 @Data
 @AllArgsConstructor
-@TableName("session")
+@TableName("tb_session")
 public class SessionEntity {
-
     // 主键
     private Long    id;
     // 协议

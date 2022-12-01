@@ -9,7 +9,7 @@ import io.pkts.protocol.Protocol;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.sniff.entity.SessionEntity;
-import org.sniff.service.SplitService;
+import org.sniff.service.SplitCapService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -21,7 +21,7 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
 @Service
-public class SplitServiceImpl implements SplitService {
+public class SplitCapCapServiceImpl implements SplitCapService {
 
     @Value("${config.delay}")
     private Long delay;
@@ -38,7 +38,7 @@ public class SplitServiceImpl implements SplitService {
     private RabbitTemplate rabbitTemplate;
 
     @Override
-    public void split(InputStream inputStream) throws IOException {
+    public void splitCap(InputStream inputStream) throws IOException {
         Pcap.openStream(inputStream).loop(packet -> {
             // 无法解析，跳过
             if (!(packet.hasProtocol(Protocol.IPv4) || packet.hasProtocol(Protocol.IPv6))
@@ -54,7 +54,7 @@ public class SplitServiceImpl implements SplitService {
                     ? (TransportPacket) packet.getPacket(Protocol.TCP)
                     : (TransportPacket) packet.getPacket(Protocol.UDP);
 
-            // 生成 key、value、score，其中，key 为五元组生成且唯一；value 为负载；score 为到达时刻
+            // 生成 key、value、score，其中，key 为五元组生成且唯一，value 为负载，score 为到达时刻
             String key = SessionEntity.encode(payload.getProtocol().getName(),
                     header.getSourceIP(), payload.getSourcePort(),
                     header.getDestinationIP(), payload.getDestinationPort());
@@ -79,7 +79,7 @@ public class SplitServiceImpl implements SplitService {
             if (count != null) {
                 // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                 if (count == 0L) {
-                    rabbitTemplate.convertAndSend("session-exchange", "", key, msg -> {
+                    rabbitTemplate.convertAndSend("session-exchange", null, key, msg -> {
                         msg.getMessageProperties().getHeaders().put("x-delay", delay);
                         return msg;
                     });

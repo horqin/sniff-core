@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+import java.util.Collections;
 
 @Service
 public class SplitCapServiceImpl implements SplitCapService {
@@ -27,7 +27,7 @@ public class SplitCapServiceImpl implements SplitCapService {
     @Value("${config.delay}")
     private Long delay;
 
-    private final Long MAX_COUNT = 24L;
+    private final long MAX_COUNT = 24L;
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -45,33 +45,33 @@ public class SplitCapServiceImpl implements SplitCapService {
             }
 
             // 解析网络流量
-            IPPacket header = packet.hasProtocol(Protocol.IPv4)
+            IPPacket ipPacket = packet.hasProtocol(Protocol.IPv4)
                     ? (IPv4Packet) packet.getPacket(Protocol.IPv4)
                     : (IPv6Packet) packet.getPacket(Protocol.IPv6);
-            TransportPacket payload = packet.hasProtocol(Protocol.TCP)
+            TransportPacket transportPacket = packet.hasProtocol(Protocol.TCP)
                     ? (TransportPacket) packet.getPacket(Protocol.TCP)
                     : (TransportPacket) packet.getPacket(Protocol.UDP);
 
-            // 生成 key、value、score，其中，key 为五元组生成且唯一，value 为负载，score 为到达时刻
-            String key = SessionEntity.encode(payload.getProtocol().getName(),
-                    header.getSourceIP(), payload.getSourcePort(),
-                    header.getDestinationIP(), payload.getDestinationPort());
-            String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);
-            double score = (double) packet.getArrivalTime();
+            // 生成 session、payload、arrivalTime，其中，session 为五元组生成且唯一，payload 为负载，arrivalTime 为到达时刻
+            String session = SessionEntity.encode(transportPacket.getProtocol().getName(),
+                    ipPacket.getSourceIP(), transportPacket.getSourcePort(),
+                    ipPacket.getDestinationIP(), transportPacket.getDestinationPort());
+            String payload = new String(ipPacket.getPayload().getArray(), StandardCharsets.US_ASCII);
+            double arrivalTime = (double) packet.getArrivalTime();
 
             // 安全地添加
             Long count = stringRedisTemplate.execute(RedisScript.of(new ClassPathResource("lua/split-cap.lua"), Long.class),
-                            Arrays.asList(Long.toString(MAX_COUNT)), key, Double.toString(score), value);
+                    Collections.singletonList(Long.toString(MAX_COUNT)), session, Double.toString(arrivalTime), payload);
             if (count != null) {
                 if (count == 1L) {
                     // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
-                    rabbitTemplate.convertAndSend("session-exchange", "", key, msg -> {
+                    rabbitTemplate.convertAndSend("session-exchange", "", session, msg -> {
                         msg.getMessageProperties().getHeaders().put("x-delay", delay);
                         return msg;
                     });
                 } else if (count == MAX_COUNT) {
                     // 如果采集的数据包数量足够，并且没有受到处理，直接添加消息队列
-                    rabbitTemplate.convertAndSend("session-queue", key);
+                    rabbitTemplate.convertAndSend("session-queue", session);
                 }
             }
 

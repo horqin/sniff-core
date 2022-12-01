@@ -50,15 +50,17 @@
 
 1）SplitCap Controller 接收网络流量，按照如下代码片段分割网络流量，
 
-```java
-if (!stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
-    if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) < MAX_COUNT) {
-        stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
-    }
-}
+```lua
+if redis.call('SISMEMBER', 'done-session-entry', ARGV[1]) == 0 then
+    local count = redis.call('ZCARD', 'session::' .. ARGV[1])
+    if count < tonumber(KEYS[1]) then
+        redis.call('ZADD', 'session::' .. ARGV[1], ARGV[2], ARGV[3])
+        return count + 1
+    end
+end
 ```
 
-其中，`key` 为会话的唯一编码，通过五元组（协议，源和目的的 IP 地址和端口号）生成，具有唯一性；`value` 为数据包的负载内容；`score` 为数据包的到达时刻。因此，切割的会话会通过 RabbitMQ 送达 Session Listener，进行网络流量的检测和识别；
+其中，`ARGV[1]` 为会话的唯一编码，通过五元组（协议，源和目的的 IP 地址和端口号）生成，具有唯一性，`ARGV[2]` 为数据包的到达时刻，`ARGV[3]` 为数据包的负载内容，另外，`KEYS[1]` 为最大数据包数量 。因此，切割的会话会通过 RabbitMQ 送达 Session Listener，进行网络流量的检测和识别；
 
 2）Session Listener 收到消息，首先通过 Feign 使用部署在 Flask 的 PyTorch 模型（Forecat App）进行预测，然后写入预测结果到 MySQL 中。
 

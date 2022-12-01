@@ -6,19 +6,20 @@ import io.pkts.packet.IPv4Packet;
 import io.pkts.packet.IPv6Packet;
 import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
-import org.redisson.api.RLock;
-import org.redisson.api.RedissonClient;
 import org.sniff.entity.SessionEntity;
 import org.sniff.service.SplitCapService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 @Service
 public class SplitCapCapServiceImpl implements SplitCapService {
@@ -30,9 +31,6 @@ public class SplitCapCapServiceImpl implements SplitCapService {
 
     @Resource
     private StringRedisTemplate stringRedisTemplate;
-
-    @Resource
-    private RedissonClient redissonClient;
 
     @Resource
     private RabbitTemplate rabbitTemplate;
@@ -61,23 +59,11 @@ public class SplitCapCapServiceImpl implements SplitCapService {
             String value = new String(header.getPayload().getArray(), StandardCharsets.US_ASCII);
             double score = (double) packet.getArrivalTime();
 
-            Long count = null;
-
-            // 使用锁安全地进行添加
-            RLock lock = redissonClient.getLock("lock::session::" + key);
-            lock.lock();
-            try {
-                if (!stringRedisTemplate.opsForSet().isMember("done-session-entry", key)) {
-                    if ((count = stringRedisTemplate.opsForZSet().size("session::" + key)) < MAX_COUNT) {
-                        stringRedisTemplate.opsForZSet().add("session::" + key, value, score);
-                    }
-                }
-            } finally {
-                lock.unlock();
-            }
-
+            // 安全地添加
+            Long count = stringRedisTemplate.execute(RedisScript.of(new ClassPathResource("lua/split-cap.lua"), Long.class),
+                            Arrays.asList(Long.toString(MAX_COUNT)), key, Double.toString(score), value);
             if (count != null) {
-                if (count == 0L) {
+                if (count == 1L) {
                     // zSet 中的数据并不存在，说明首次提交，于是添加延迟队列，从而保证网络流量一定得到处理
                     rabbitTemplate.convertAndSend("session-exchange", "", key, msg -> {
                         msg.getMessageProperties().getHeaders().put("x-delay", delay);

@@ -1,7 +1,5 @@
 package org.sniff.service.impl;
 
-import org.redisson.api.RLock;
-import org.redisson.api.RedissonClient;
 import org.sniff.entity.SessionEntity;
 import org.sniff.feign.ForecastFeign;
 import org.sniff.mapper.SessionMapper;
@@ -22,9 +20,6 @@ public class SessionServiceImpl implements SessionService {
     private SessionMapper sessionMapper;
 
     @Resource
-    private RedissonClient redissonClient;
-
-    @Resource
     private ForecastFeign forecastFeign;
 
     @Override
@@ -35,14 +30,8 @@ public class SessionServiceImpl implements SessionService {
             String forecast = forecastFeign.forecast(session);
             sessionMapper.insert(SessionEntity.decode(session, Integer.parseInt(forecast), new Date()));
 
-            // 使用锁安全地进行删除
-            RLock lock = redissonClient.getLock("lock::session::" + session);
-            lock.lock();
-            try {
-                stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);
-            } finally {
-                lock.unlock();
-            }
+            // 安全地删除
+            stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);
         }
     }
 }

@@ -34,6 +34,7 @@ public class SessionServiceImpl implements SessionService {
             // 若是并不存在，那么占位，并且在日志中记录预测结果
             String forecast = forecastFeign.forecast(session);
             sessionMapper.insert(SessionEntity.decode(session, Integer.parseInt(forecast), new Date()));
+
             // 使用锁安全地进行删除
             RLock lock = redissonClient.getLock("lock::session::" + session);
             lock.lock();

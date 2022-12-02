@@ -2,11 +2,11 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="162.10138mm"
-   height="110.61347mm"
-   viewBox="0 0 162.10138 110.61347"
+   width="106.00266mm"
+   height="66.124672mm"
+   viewBox="0 0 106.00266 66.124672"
    version="1.1"
-   id="svg1506"
+   id="svg935"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    sodipodi:docname="arch.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -14,7 +14,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview1508"
+     id="namedview937"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="1.0179639"
-     inkscape:cx="237.23827"
-     inkscape:cy="322.70298"
+     inkscape:zoom="2.8792368"
+     inkscape:cx="238.43124"
+     inkscape:cy="189.45993"
      inkscape:window-width="1920"
      inkscape:window-height="991"
      inkscape:window-x="-9"
@@ -34,574 +34,635 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs1503">
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath34">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path32" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath48">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path46" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath62">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path60" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath76">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path74" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath88">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path86" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath102">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path100" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath116">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path114" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath130">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path128" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath144">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path142" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath170">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path168" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath182">
-      <path
-         d="M 9.1553e-5,540 H 960 V 2.4414e-4 L 1.2207e-4,1.8311e-4"
-         clip-rule="evenodd"
-         id="path180" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath194">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path192" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath208">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path206" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath226">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path224" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath242">
-      <path
-         d="M 0,540 H 960 V 0 L 0,6.1035e-5"
-         clip-rule="evenodd"
-         id="path240" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath254">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path252" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath266">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path264" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath282">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path280" />
-    </clipPath>
-    <clipPath
-       clipPathUnits="userSpaceOnUse"
-       id="clipPath294">
-      <path
-         d="M 1.4305e-5,0 H 960.00001 V 540 H 1.4305e-5 Z"
-         clip-rule="evenodd"
-         id="path292" />
-    </clipPath>
-  </defs>
+     id="defs932" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-47.269594,-50.2212)">
+     transform="translate(-29.335301,-56.25821)">
     <g
-       id="g1352"
-       transform="matrix(0.44097221,0,0,-0.44097221,-35.483251,264.75418)">
-      <path
-         d="m 344.4,461.4 c 0,9.15 7.41,16.56 16.56,16.56 h 162.72 c 9.15,0 16.56,-7.41 16.56,-16.56 v -66.24 c 0,-9.15 -7.41,-16.56 -16.56,-16.56 H 360.96 c -9.15,0 -16.56,7.41 -16.56,16.56 z"
-         style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path22" />
-      <path
-         d="M 188.16,236.16 H 299.04 V 486 H 188.16 Z"
-         style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path24" />
-      <path
-         d="m 201.36,370.44 h 80.76 v 16.32 h -80.76 z"
-         style="fill:none;stroke:#70ad47;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path26" />
+       id="g765"
+       transform="matrix(0.26458333,0,0,0.26458333,-26.206032,13.967211)">
       <g
-         id="g28">
-        <g
-           id="g30"
-           clip-path="url(#clipPath34)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,230.33,376.22)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text38"><tspan
-               x="0 7.5599999 15.12"
-               y="0"
-               sodipodi:role="line"
-               id="tspan36">嗅探器</tspan></text>
-        </g>
+         id="g16"
+         transform="translate(378.72,248.8)">
+        <path
+           d="M 0,0 V -2.24 H 0.48 V 0 Z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.840001 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.839998 v -2.240002 h 0.48 v 2.240002 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-4.000002 v -2.079998 h 0.48 v 2.079998 z m 0,-3.84 v -2.079998 h 0.48 v 2.079998 z m 0,-3.840001 V -44.48 h 0.48 v 2.079998 z m 0,-3.84 V -48.32 h 0.48 v 2.079998 z m 0,-3.84 V -52.32 h 0.48 v 2.239998 z m 0,-3.839996 V -56.16 h 0.48 v 2.240002 z m 0,-3.84 V -60 h 0.48 v 2.240002 z m 0,-3.84 v -0.16 -1.600003 L 0.16,-63.84 l 0.48,0.16 v 0.319999 0 l -0.16,1.600003 v 0 0.16 z m 0.48,-3.840004 0.16,-1.119996 0.48,-1.120002 0.48,0.319999 -0.32,0.959999 v 0 l -0.32,1.120003 z m 1.28,-3.680001 0.16,-0.159996 0.8,-1.279999 0.32,-0.480003 0.32,0.32 -0.16,0.480003 v -0.160004 l -0.8,1.279999 v 0 l -0.16,0.160004 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path18" />
       </g>
-      <path
-         d="m 201.36,344.16 h 80.76 v 16.32 h -80.76 z"
-         style="fill:none;stroke:#70ad47;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path40" />
       <g
-         id="g42">
-        <g
-           id="g44"
-           clip-path="url(#clipPath48)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,230.33,349.9)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text52"><tspan
-               x="0 7.5599999 15.12"
-               y="0"
-               sodipodi:role="line"
-               id="tspan50">监听器</tspan></text>
-        </g>
+         id="g20"
+         transform="translate(382.72,176.48)">
+        <path
+           d="M 0,0 0.64,-0.64 1.6,-1.6 2.08,-1.12 0.96,-0.16 V -0.32 L 0.48,0.32 Z m 3.04,-2.56 1.12,-0.8 0.8,-0.32 0.16,0.48 -0.64,0.32 v 0 L 3.2,-2.08 Z M 6.4,-4.32 7.04,-4.48 8.48,-4.96 H 8.64 L 8.8,-4.32 H 8.64 v 0 L 7.2,-4 v 0 l -0.48,0.16 z m 3.84,-0.8 1.44,-0.16 h 0.8 v 0.64 h -0.8 v 0 H 10.4 Z m 4,-0.16 h 2.08 v 0.64 h -2.08 z m 3.84,0 h 2.08 v 0.64 h -2.08 z m 3.84,0 H 24 v 0.64 h -2.08 z m 3.84,0 h 2.08 v 0.64 h -2.08 z m 3.84,0 h 2.24 v 0.64 H 29.6 Z m 3.839999,0 H 35.68 v 0.64 h -2.240001 z m 3.84,0 H 39.52 v 0.64 h -2.240001 z m 3.84,0 h 2.240002 v 0.64 h -2.240002 z m 3.84,0 h 2.240002 v 0.64 h -2.240002 z m 3.84,0 h 2.240002 v 0.64 h -2.240002 z m 3.84,0 h 2.240002 v 0.64 h -2.240002 z m 3.840001,0 h 2.240001 v 0.64 H 56.48 Z m 3.84,0 h 2.240001 v 0.64 H 60.32 Z m 3.840004,0 h 2.239998 v 0.64 H 64.160004 Z M 68,-5.28 h 2.239998 v 0.64 H 68 Z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path22" />
       </g>
-      <path
-         d="m 402,454.92 h 80.76 v 16.92 H 402 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path54" />
       <g
-         id="g56">
-        <g
-           id="g58"
-           clip-path="url(#clipPath62)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,433.78,461.28)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text66"><tspan
-               x="0 4.3167601 8.1572399 12.49668 14.15988"
-               y="0"
-               sodipodi:role="line"
-               id="tspan64">Redis</tspan></text>
-        </g>
+         id="g24"
+         transform="translate(454.56,171.2)">
+        <path
+           d="M 0,0 H 2.24 V 0.64 H 0 Z M 4,0 H 6.08 V 0.64 H 4 Z M 7.84,0 H 9.92 V 0.64 H 7.84 Z m 3.84,0 h 2.08 v 0.64 h -2.08 z m 3.84,0 h 2.08 v 0.64 h -2.08 z m 3.840001,0 H 21.6 v 0.64 h -2.239999 z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.839998,0 h 2.24 v 0.64 h -2.24 z m 3.840002,0 h 2.239998 v 0.64 h -2.239998 z m 3.84,0 h 2.239998 v 0.64 h -2.239998 z m 3.840001,0 h 2.239997 v 0.64 h -2.239997 z m 3.84,0 H 48.48 v 0.64 h -2.239998 z m 3.84,0 H 52.32 v 0.64 h -2.239998 z m 3.839996,0 H 56.16 v 0.64 h -2.240002 z m 3.84,0 H 60 v 0.64 h -2.240002 z m 3.84,0 H 63.84 v 0.64 h -2.240002 z m 4,0 H 67.68 v 0.64 h -2.080002 z m 3.840004,0 h 2.079995 v 0.64 h -2.079995 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path26" />
       </g>
-      <path
-         d="m 402,430.56 h 80.76 V 447 H 402 Z"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path68" />
       <g
-         id="g70">
-        <g
-           id="g72"
-           clip-path="url(#clipPath76)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,412.18,436.39)"
-             style="font-variant:normal;font-weight:normal;font-size:7.584px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text80"><tspan
-               x="0 3.8375039 8.1603842 9.8591995 11.520096 13.931808 18.603552 22.433472"
-               y="0"
-               sodipodi:role="line"
-               id="tspan78">SplitCap</tspan></text>
-        </g>
+         id="g28"
+         transform="translate(527.84003,171.2)">
+        <path
+           d="M 0,0 H 2.08 V 0.64 H 0 Z M 3.84,0 H 5.92 V 0.64 H 3.84 Z M 7.68,0 H 9.92 V 0.64 H 7.68 Z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.840001,0 h 2.24 v 0.64 h -2.24 z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.839998,0 h 2.240002 v 0.64 h -2.240002 z m 3.84,0 h 2.24 v 0.64 h -2.24 z m 3.840002,0 h 2.239998 v 0.64 h -2.239998 z m 3.840001,0 h 2.239997 v 0.64 h -2.239997 z m 3.84,0 H 44.48 v 0.64 h -2.239998 z m 3.84,0 H 48.32 v 0.64 h -2.239998 z m 3.839996,0 h 1.120003 L 52.16,0.16 v 0.48 h -1.119999 v 0 h -1.120003 z m 4,0.32 h 0.320004 L 55.68,0.8 H 56 L 55.84,1.44 55.52,1.28 v 0 L 54.080002,0.96 v 0 L 53.759998,0.8 Z m 3.68,1.12 0.960003,0.48 L 59.52,2.56 59.200001,3.04 58.240002,2.4 v 0 L 57.439999,1.92 Z m 3.360001,2.08 0.16,0.16 1.120003,0.96 0.319999,0.48 -0.479999,0.32 -0.320004,-0.48 V 5.12 L 60.639999,4 h 0.16 -0.16 z M 63.68,6.4 64.160004,7.04 64.800003,8.16 64.32,8.48 63.68,7.2 V 7.36 L 63.200001,6.72 Z m 1.919998,3.36 0.480004,1.28 0.159996,0.8 -0.479996,0.16 -0.160004,-0.8 v 0 L 65.120003,9.92 Z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path30" />
+      </g>
+      <g
+         id="g32"
+         transform="translate(594.40002,184.64)">
+        <path
+           d="M 0,0 0.16,0.8 V 2.24 H -0.32 V 0.8 0.8 L -0.48,0.16 Z M 0.32,4 V 6.08 H -0.32 V 4 Z m 0,3.84 V 9.92 H -0.32 V 7.84 Z m 0,3.84 v 2.08 h -0.64 v -2.08 z m 0,3.84 v 2.24 h -0.64 v -2.24 z m 0,3.840001 V 21.6 h -0.64 v -2.239999 z m 0,3.84 v 2.24 h -0.64 v -2.24 z m 0,3.84 v 2.24 h -0.64 v -2.24 z m 0,3.839998 v 2.24 h -0.64 v -2.24 z m 0,3.840002 v 2.239998 h -0.64 v -2.239998 z m 0,3.84 v 2.239998 h -0.64 v -2.239998 z m 0,3.840001 v 2.239997 h -0.64 v -2.239997 z m 0,3.84 V 48.48 h -0.64 v -2.239998 z m 0,3.84 V 52.32 h -0.64 v -2.239998 z m 0,3.839996 V 56.16 h -0.64 v -2.240002 z m 0,3.84 V 60 h -0.64 v -2.240002 z m 0,4 V 63.84 h -0.64 v -2.080002 z m -0.16,3.84 v 0.160004 L 0,67.360001 -0.16,67.839996 -0.64,67.68 v -0.480003 0 l 0.32,-1.439995 v 0 -0.160004 z m -0.8,3.840004 -0.32,0.799996 -0.64,1.120003 -0.48,-0.160004 0.64,-1.119995 v 0 l 0.32,-0.959999 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path34" />
+      </g>
+      <g
+         id="g36"
+         transform="translate(592,257.44)">
+        <path
+           d="M 0,0 V 0.16 L -0.96,1.44 -1.44,1.76 -1.76,1.44 -1.44,0.96 v 0 l 0.96,-1.12 v 0 0 z m -2.56,3.04 -0.48,0.48 -1.28,0.96 v 0 L -4.64,4 V 4 4 L -3.36,3.04 H -3.52 L -2.88,2.56 Z M -5.76,5.28 -7.04,5.92 -7.84,6.24 -8,5.6 -7.2,5.28 V 5.44 L -6.08,4.8 Z m -3.68,1.44 h -0.48 l -1.6,0.32 h -0.16 V 6.4 h 0.16 v 0 l 1.44,-0.16 v 0 L -9.6,6.08 Z m -3.84,0.32 h -2.24 V 6.56 h 2.24 z m -3.840001,0 h -2.24 V 6.56 h 2.24 z m -3.839998,0 h -2.240002 V 6.56 h 2.240002 z m -3.84,0 h -2.240002 V 6.56 h 2.240002 z m -3.84,0 h -2.24 V 6.56 h 2.24 z m -3.840001,0 h -2.240001 V 6.56 H -32.48 Z m -3.84,0 h -2.240001 V 6.56 H -36.32 Z m -3.84,0 h -2.240002 V 6.56 H -40.16 Z m -4,0 h -2.080002 V 6.56 H -44.16 Z m -3.84,0 h -2.080002 V 6.56 H -48 Z m -3.84,0 h -2.079998 V 6.56 H -51.84 Z m -3.84,0 h -2.079998 V 6.56 H -55.68 Z m -3.84,0 h -2.239998 V 6.56 H -59.52 Z m -3.840001,0 h -2.239997 V 6.56 h 2.239997 z m -3.839996,0 h -2.240005 V 6.56 h 2.240005 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path38" />
+      </g>
+      <g
+         id="g40"
+         transform="translate(520.96002,264.48001)">
+        <path
+           d="M 0,0 H -2.24 V -0.48 H 0 Z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.840001,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.839998,0 h -2.240002 v -0.48 h 2.240002 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -4.000002,0 h -2.079998 v -0.48 h 2.079998 z m -3.84,0 h -2.079998 v -0.48 h 2.079998 z m -3.840001,0 H -44.48 v -0.48 h 2.079998 z m -3.84,0 H -48.32 v -0.48 h 2.079998 z m -3.84,0 H -52.32 v -0.48 h 2.239998 z m -3.839996,0 H -56.16 v -0.48 h 2.240002 z m -3.84,0 H -60 v -0.48 h 2.240002 z m -3.84,0 H -63.84 v -0.48 h 2.240002 z m -3.840004,0 H -67.68 v -0.48 h 2.239998 z m -3.839997,0 h -2.239998 v -0.48 h 2.239998 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path42" />
+      </g>
+      <g
+         id="g44"
+         transform="translate(447.84,264.48001)">
+        <path
+           d="M 0,0 H -2.24 V -0.48 H 0 Z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.840001,0 h -2.24 v -0.48 h 2.24 z m -4,0 h -2.08 v -0.48 h 2.08 z m -3.84,0 h -2.08 v -0.48 h 2.08 z m -3.839998,0 h -2.08 v -0.48 h 2.08 z m -3.840002,0 h -2.079998 v -0.48 h 2.079998 z m -3.84,0 h -2.239998 v -0.48 h 2.239998 z m -3.840001,0 h -2.239997 v -0.48 h 2.239997 z m -3.84,0 H -48.48 v -0.48 h 2.239998 z m -3.84,0 H -52.32 v -0.48 h 2.239998 z m -3.839996,0 h -1.120003 L -56.16,-0.16 -56,-0.8 l 1.119999,0.16 h -0.16 l 1.120003,0.16 z m -3.84,-0.64 h -0.320004 L -59.52,-1.12 l -0.32,-0.16 0.16,-0.64 0.319999,0.32 v -0.16 l 1.440003,0.64 v 0 h 0.32 z m -3.680001,-1.44 -0.800003,-0.48 -0.959999,-0.8 0.32,-0.48 0.960003,0.8 v 0 l 0.799999,0.48 z m -3.040004,-2.4 v 0 l -1.119995,-1.12 -0.32,-0.64 0.479996,-0.32 0.319999,0.48 v 0 l 0.959999,1.12 v 0 0 z m -2.399994,-3.04 -0.32,-0.64 -0.639999,-1.44 v 0 l 0.479995,-0.16 v 0 0 l 0.64,1.28 v 0 l 0.319999,0.64 z m -1.600006,-3.68 -0.32,-1.28 -0.159996,-0.8 0.639999,-0.16 v 0.8 0 l 0.32,1.28 z m -0.64,-3.84 v -0.64 h 0.480004 l 0.159996,0.64 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path46" />
+      </g>
+      <g
+         id="g48">
+        <path
+           d="m 209.92,409.44 v -2.23999 h 0.47999 V 409.44 Z m 0,-3.83999 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84002 V 391.84 h 0.47999 v 2.23999 z m 0,-3.84 V 388 h 0.47999 v 2.23999 z m 0,-3.84 V 384.16 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.23999 h 0.47999 V 382.56 Z m 0,-3.84 v -2.23999 h 0.47999 V 378.72 Z m 0,-3.84 v -2.23999 h 0.47999 V 374.88 Z m 0,-3.83999 v -2.24002 h 0.47999 v 2.24002 z m 0,-4 v -2.08002 h 0.47999 v 2.08002 z m 0,-3.84 V 361.12 h 0.47999 v 2.08001 z m 0,-3.84002 V 357.28 h 0.47999 v 2.07999 z m 0,-3.84 V 353.44 h 0.47999 v 2.07999 z m 0,-3.84 V 349.44 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.23999 h 0.47999 V 347.84 Z m 0,-3.84 v -2.23999 h 0.47999 V 344 Z m 0,-3.84 v -2.23999 h 0.47999 V 340.16 Z m 0,-3.83999 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84002 V 322.56 h 0.47999 v 2.23999 z m 0,-3.84 V 318.72 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.24 h 0.47999 v 2.24 z m 0,-3.84 v -2.23999 h 0.47999 V 313.28 Z m 0,-3.84 v -2.23999 h 0.47999 V 309.44 Z m 0,-4 v -2.08001 h 0.47999 V 305.44 Z m 0,-3.83999 v -2.08002 h 0.47999 v 2.08002 z m 0,-3.84 v -2.08002 h 0.47999 v 2.08002 z m 0,-3.84 V 291.84 h 0.47999 v 2.08001 z m 0,-3.84002 V 287.84 h 0.47999 v 2.23999 z m 0,-3.84 V 284 h 0.47999 v 2.23999 z m 0,-3.84 V 280.16 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.23999 h 0.47999 V 278.56 Z m 0,-3.84 v -2.23999 h 0.47999 V 274.72 Z m 0,-3.84 v -2.23999 h 0.47999 V 270.88 Z m 0,-3.83999 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84 v -2.24002 h 0.47999 v 2.24002 z m 0,-3.84002 V 257.12 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.24 h 0.47999 v 2.24 z m 0,-3.84001 V 249.44 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.23999 h 0.47999 V 247.84 Z m 0,-4 v -2.08001 h 0.47999 V 243.84 Z m 0,-3.84 v -2.08 h 0.47999 V 240 Z m 0,-3.84 v -2.08 h 0.47999 v 2.08 z m 0,-3.83999 V 230.24 h 0.47999 v 2.08001 z m 0,-3.84001 v -2.24 h 0.47999 v 2.24 z m 0,-3.84 v -2.24001 h 0.47999 V 224.64 Z m 0,-3.84 v -2.24 h 0.47999 v 2.24 z m 0,-3.83999 V 214.72 h 0.47999 v 2.24001 z m 0,-3.84002 V 210.88 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.24001 h 0.47999 V 209.28 Z m 0,-3.84 v -2.24 h 0.47999 v 2.24 z m 0,-3.83999 V 199.36 h 0.47999 v 2.24001 z m 0,-3.84002 V 195.52 h 0.47999 v 2.23999 z m 0,-3.83999 v -2.24001 h 0.47999 V 193.92 Z m 0,-3.84 v -2.24 h 0.47999 v 2.24 z m 0,-3.84 V 184 h 0.47999 v 2.24 z m 0,-4 v -2.08 h 0.47999 v 2.08 z m 0,-3.84001 v -2.07998 h 0.47999 v 2.07998 z m 0,-3.83999 v -2.08 h 0.47999 v 2.08 z m 0,-3.84 v -2.08 h 0.47999 v 2.08 z m 0,-3.84 v -2.24 h 0.47999 v 2.24 z m 0,-3.84001 V 160.8 h 0.32 v 0.48 h -0.16 l 0.31999,-0.31999 v 2.07998 z M 212,160.8 h 2.08 v 0.48 H 212 Z m 3.84,0 h 2.08 v 0.48 h -2.08 z m 3.83999,0 h 2.08 v 0.48 h -2.08 z m 3.84001,0 h 2.23999 v 0.48 H 223.52 Z m 3.84,0 h 2.24001 v 0.48 H 227.36 Z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.83999,0 H 237.28 v 0.48 h -2.24001 z m 3.84001,0 h 2.23999 v 0.48 H 238.88 Z m 3.84,0 h 2.24001 v 0.48 H 242.72 Z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.83999,0 H 252.64 v 0.48 h -2.24001 z m 3.84001,0 h 2.24001 v 0.48 H 254.24 Z m 3.83999,0 h 2.24002 v 0.48 h -2.24002 z m 3.84002,0 H 264.16 v 0.48 h -2.23999 z m 3.84,0 H 268 v 0.48 h -2.23999 z m 4,0 H 271.84 v 0.48 h -2.07999 z m 3.84,0 h 2.07998 v 0.48 h -2.07998 z m 3.83999,0 h 2.07999 v 0.48 H 277.44 Z m 3.84,0 h 2.07999 v 0.48 H 281.28 Z m 3.84,0 h 2.23999 v 0.48 H 285.12 Z m 3.83999,0 h 2.24002 v 0.48 h -2.24002 z m 3.84,0 h 2.24002 v 0.48 h -2.24002 z m 3.84002,0 H 298.88 v 0.48 h -2.23999 z m 3.84,0 H 302.72 v 0.48 h -2.23999 z m 3.84,0 H 306.56 v 0.48 h -2.23999 z m 3.83999,0 h 2.23999 v 0.48 H 308.16 Z m 3.84,0 h 2.23999 v 0.48 H 312 Z m 3.84,0 h 2.23999 v 0.48 H 315.84 Z m 3.83999,0 h 2.24002 v 0.48 h -2.24002 z m 3.36002,0.95999 V 164 H 322.56 v -2.24001 z m 0,3.84002 V 167.84 H 322.56 v -2.23999 z m 0,3.83999 v 2.23999 H 322.56 V 169.44 Z m 0,3.84 v 2.24 H 322.56 v -2.24 z m 0,3.83999 V 179.36 H 322.56 v -2.24001 z m 0,4 V 183.2 H 322.56 v -2.08001 z m 0,3.84002 v 2.07998 H 322.56 v -2.07998 z m 0,3.83999 v 2.08 H 322.56 v -2.08 z m 0,3.84 v 2.08 H 322.56 v -2.08 z m 0,3.84 v 2.24 H 322.56 v -2.24 z m 0,3.84001 V 202.56 H 322.56 v -2.23999 z m 0,3.83999 v 2.23999 H 322.56 V 204.16 Z m 0,3.84 v 2.24 H 322.56 V 208 Z m 0,3.84 v 2.24 H 322.56 v -2.24 z m 0,3.83999 V 217.92 H 322.56 v -2.24001 z m 0,3.84001 v 2.23999 H 322.56 V 219.52 Z m 0,3.84 v 2.24001 H 322.56 V 223.36 Z m 0,3.84 v 2.24 H 322.56 v -2.24 z m 0,3.83999 V 233.28 H 322.56 v -2.24001 z m 0,3.84001 v 2.23999 H 322.56 V 234.88 Z m 0,3.84 v 2.24001 H 322.56 V 238.72 Z m 0,4 v 2.08 H 322.56 v -2.08 z m 0,3.84 v 2.08 H 322.56 v -2.08 z m 0,3.83999 V 252.48 H 322.56 v -2.08001 z m 0,3.84001 v 2.08001 H 322.56 V 254.24 Z m 0,3.83999 v 2.24002 H 322.56 v -2.24002 z m 0,3.84002 V 264.16 H 322.56 v -2.23999 z m 0,3.84 V 268 H 322.56 v -2.23999 z m 0,3.84 V 271.84 H 322.56 v -2.23999 z m 0,3.83999 v 2.23999 H 322.56 V 273.44 Z m 0,3.84 v 2.23999 H 322.56 V 277.28 Z m 0,3.84 v 2.23999 H 322.56 V 281.12 Z m 0,3.83999 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84002 V 294.88 H 322.56 v -2.23999 z m 0,3.84 V 298.72 H 322.56 v -2.23999 z m 0,3.84 V 302.56 H 322.56 v -2.23999 z m 0,4 v 2.07998 H 322.56 v -2.07998 z m 0,3.83999 v 2.07999 H 322.56 V 308.16 Z m 0,3.84 v 2.07999 H 322.56 V 312 Z m 0,3.84 v 2.08001 H 322.56 V 315.84 Z m 0,3.83999 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84002 V 333.44 H 322.56 v -2.23999 z m 0,3.84 V 337.28 H 322.56 v -2.23999 z m 0,3.83999 v 2.24 H 322.56 v -2.24 z m 0,3.84 v 2.23999 H 322.56 V 342.72 Z m 0,3.84 v 2.23999 H 322.56 V 346.56 Z m 0,3.83999 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84002 V 364.16 H 322.56 v -2.23999 z m 0,4 V 368 H 322.56 v -2.07999 z m 0,3.84 V 371.84 H 322.56 v -2.07999 z m 0,3.84 v 2.07998 H 322.56 v -2.07998 z m 0,3.83999 v 2.07999 H 322.56 V 377.44 Z m 0,3.84 v 2.23999 H 322.56 V 381.28 Z m 0,3.84 v 2.23999 H 322.56 V 385.12 Z m 0,3.83999 v 2.24002 H 322.56 v -2.24002 z m 0,3.84 v 2.24002 H 322.56 v -2.24002 z m 0,3.84002 V 398.88 H 322.56 v -2.23999 z m 0,3.84 V 402.72 H 322.56 v -2.23999 z m 0,3.84 V 406.56 H 322.56 v -2.23999 z m 0,3.83999 v 1.60001 h -1.12 V 409.12 H 322.72 l -0.16,0.32 v -1.28 z m -2.88001,1.60001 h -2.08001 V 409.12 H 320.16 Z m -3.83999,0 h -2.08002 V 409.12 h 2.08002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84002,0 H 302.56 V 409.12 h 2.23999 z m -3.84,0 H 298.72 V 409.12 h 2.23999 z m -3.83999,0 h -2.24 V 409.12 h 2.24 z m -3.84,0 h -2.23999 V 409.12 H 293.28 Z m -3.84,0 h -2.23999 V 409.12 H 289.44 Z m -3.83999,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84002,0 H 271.84 V 409.12 h 2.23999 z m -3.84,0 H 268 V 409.12 h 2.23999 z m -4,0 H 264.16 V 409.12 h 2.07999 z m -3.84,0 h -2.07998 V 409.12 h 2.07998 z m -3.83999,0 h -2.07999 V 409.12 H 258.56 Z m -3.84,0 h -2.08 V 409.12 h 2.08 z m -3.84,0 h -2.24 V 409.12 h 2.24 z m -3.84001,0 H 244.8 V 409.12 h 2.23999 z m -3.83999,0 h -2.23999 V 409.12 H 243.2 Z m -3.84,0 h -2.24001 V 409.12 H 239.36 Z m -3.84,0 h -2.24 V 409.12 h 2.24 z m -3.84001,0 H 229.44 V 409.12 h 2.23999 z m -3.83999,0 h -2.23999 V 409.12 H 227.84 Z m -3.84,0 h -2.24001 V 409.12 H 224 Z m -3.84,0 h -2.24 V 409.12 h 2.24 z m -3.83999,0 H 214.08 V 409.12 h 2.24001 z m -3.84001,0 h -2.24 V 409.12 h 2.24 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path50" />
+      </g>
+      <g
+         id="g52">
+        <path
+           d="m 220,260.32001 h 88.79999 V 276.16 H 220 Z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path54" />
+      </g>
+      <g
+         id="g56"
+         transform="scale(0.203125)">
+        <text
+           xml:space="preserve"
+           transform="translate(1239.04,1337.4399)"
+           style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F1;-inkscape-font-specification:F1;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text60"><tspan
+             x="0 40.959999 81.919998"
+             y="0"
+             sodipodi:role="line"
+             id="tspan58">嗅探器</tspan></text>
+      </g>
+      <g
+         id="g62">
+        <path
+           d="m 220,283.20001 h 88.79999 v 15.84 H 220 Z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path64" />
+      </g>
+      <g
+         id="g66"
+         transform="scale(0.203125)">
+        <text
+           xml:space="preserve"
+           transform="translate(1239.04,1450.08)"
+           style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F1;-inkscape-font-specification:F1;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text70"><tspan
+             x="0 40.959999 81.919998"
+             y="0"
+             sodipodi:role="line"
+             id="tspan68">监听器</tspan></text>
+      </g>
+      <g
+         id="g72">
+        <path
+           d="m 441.92001,176.8 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path74" />
+      </g>
+      <g
+         id="g76"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18772.301,7391.6802)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text80"><tspan
+             x="0 219.54559 367.00159 530.84161 616.03839"
+             y="0"
+             sodipodi:role="line"
+             id="tspan78">Redis</tspan></text>
       </g>
       <g
          id="g82">
-        <g
-           id="g84"
-           clip-path="url(#clipPath88)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,440.5,436.39)"
-             style="font-variant:normal;font-weight:normal;font-size:7.584px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text92"><tspan
-               x="0 4.7020798 9.0022078 13.19616 15.607872 18.118176 22.441055 24.139872 25.800768 29.638271"
-               y="0"
-               sodipodi:role="line"
-               id="tspan90">Controller</tspan></text>
-        </g>
-      </g>
-      <path
-         d="m 402,405.96 h 80.76 V 422.4 H 402 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path94" />
-      <g
-         id="g96">
-        <g
-           id="g98"
-           clip-path="url(#clipPath102)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,425.86,411.77)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text106"><tspan
-               x="0 4.3167601 8.1496801 12.48912 16.79076 18.4842 20.888281 27.465481"
-               y="0"
-               sodipodi:role="line"
-               id="tspan104">RabbitMQ</tspan></text>
-        </g>
-      </g>
-      <path
-         d="m 402,381.72 h 80.76 v 16.32 H 402 Z"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path108" />
-      <g
-         id="g110">
-        <g
-           id="g112"
-           clip-path="url(#clipPath116)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,416.98,387.48)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text120"><tspan
-               x="0 3.8404801 7.6809602 10.79568 13.9104 15.60384 19.91304 24.108841 25.787161 29.264759 30.9582 34.0578 36.46188 40.2948 44.490601 48.331081"
-               y="0"
-               sodipodi:role="line"
-               id="tspan118">Session Listener</tspan></text>
-        </g>
-      </g>
-      <path
-         d="m 344.4,357.24 h 80.76 v 16.32 H 344.4 Z"
-         style="fill:none;stroke:#ed7d31;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path122" />
-      <g
-         id="g124">
-        <g
-           id="g126"
-           clip-path="url(#clipPath130)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,363.72,362.98)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text134"><tspan
-               x="0 3.6061201 7.9380002 10.44036 14.28084 17.750879 21.583799 24.698521 27.1026 28.78092 33.589081 37.898281"
-               y="0"
-               sodipodi:role="line"
-               id="tspan132">Forecast App</tspan></text>
-        </g>
-      </g>
-      <path
-         d="m 459.6,357.36 h 80.64 V 373.8 H 459.6 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path136" />
-      <g
-         id="g138">
-        <g
-           id="g140"
-           clip-path="url(#clipPath144)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,488.33,363.19)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text148"><tspan
-               x="0 6.59232 10.18332 14.0238 19.77696"
-               y="0"
-               sodipodi:role="line"
-               id="tspan146">MySQL</tspan></text>
-        </g>
-      </g>
-      <path
-         d="m 441.82,446.98 v 4.94 h 1 v -4.94 z m -1.5,3.94 2,4 2,-4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path150" />
-      <path
-         d="m 441.82,430.56 v -5.24 h 1 v 5.24 z m -1.5,-4.24 2,-4 2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path152" />
-      <path
-         d="m 482.76,438.34 h 18 l -0.5,0.5 v -24.6 l 0.5,0.5 h -15 v -1 h 15.5 v 25.6 h -18.5 z m 4,-22.1 -4,-2 4,-2 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path154" />
-      <path
-         d="m 442.82,405.96 v -4.94 h -1 v 4.94 z m 1.5,-3.94 -2,-4 -2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path156" />
-      <path
-         d="m 402.04,390.38 h -17.7 v -13.83 h 1 v 13.33 l -0.5,-0.5 h 17.2 z m -19.2,-12.83 2,-4 2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path158" />
-      <path
-         d="m 482.76,390.38 h 17.7 v -13.61 h -1 v 13.11 l 0.5,-0.5 h -17.2 z m 19.2,-12.61 -2,-4 -2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path160" />
-      <path
-         d="m 402,332.52 h 80.76 v 16.32 H 402 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path162" />
-      <g
-         id="g164">
-        <g
-           id="g166"
-           clip-path="url(#clipPath170)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,433.3,338.26)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text174"><tspan
-               x="0 4.6872001 8.5125599 12.70836 16.541281"
-               y="0"
-               sodipodi:role="line"
-               id="tspan172">Canal</tspan></text>
-        </g>
+        <path
+           d="m 441.92001,199.36 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path84" />
       </g>
       <g
-         id="g176">
-        <g
-           id="g178"
-           clip-path="url(#clipPath182)">
-          <path
-             d="m 500.46,357.36 v -17.24 h -14.7 v 1 h 14.2 l -0.5,-0.5 v 16.74 z m -13.7,-18.74 -4,2 4,2 z"
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="path184" />
-        </g>
+         id="g86"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(17864.801,8280.1602)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text90"><tspan
+             x="0 183.50079 347.34079 435.81439 524.28796 612.7616 832.30719 976.48639 1222.2463 1441.792 1605.632 1769.4719 1857.9456 1966.08 2129.9199 2218.3936 2306.8672 2451.0464"
+             y="0"
+             sodipodi:role="line"
+             id="tspan88">SplitCapController</tspan></text>
       </g>
-      <path
-         d="m 402,307.8 h 80.76 v 16.32 H 402 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path186" />
       <g
-         id="g188">
-        <g
-           id="g190"
-           clip-path="url(#clipPath194)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,433.54,313.56)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text198"><tspan
-               x="0 4.1806798 8.0287199 10.30428 13.89528"
-               y="0"
-               sodipodi:role="line"
-               id="tspan196">Kafka</tspan></text>
-        </g>
+         id="g92">
+        <path
+           d="m 441.92001,221.75999 h 88.79996 v 15.84002 h -88.79996 z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path94" />
       </g>
-      <path
-         d="m 402,282.84 h 80.76 v 16.32 H 402 Z"
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path200" />
       <g
-         id="g202">
-        <g
-           id="g204"
-           clip-path="url(#clipPath208)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,418.3,288.53)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text212"><tspan
-               x="0 4.6872001 9.0190802 13.1922 15.46776 17.1612 21.4704 23.14872 26.62632 28.319759 31.419359 33.823441 37.656361 41.852161 45.692638"
-               y="0"
-               sodipodi:role="line"
-               id="tspan210">Config Listener</tspan></text>
-        </g>
+         id="g96"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18444.6,9162.4004)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text100"><tspan
+             x="0 219.54559 367.00159 530.84161 694.68158 779.87836 868.35199 1159.9872"
+             y="0"
+             sodipodi:role="line"
+             id="tspan98">RabbitMQ</tspan></text>
       </g>
-      <path
-         d="m 441.82,332.52 v -5.34 h 1 v 5.34 z m -1.5,-4.34 2,-4 2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path214" />
-      <path
-         d="m 442.82,307.8 v -5.66 h -1 v 5.66 z m 1.5,-4.66 -2,-4 -2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path216" />
-      <path
-         d="m 402,257.76 h 80.76 v 16.32 H 402 Z"
-         style="fill:none;stroke:#4472c4;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path218" />
       <g
-         id="g220">
-        <g
-           id="g222"
-           clip-path="url(#clipPath226)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,424.9,263.52)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text230"><tspan
-               x="0 4.3091998 8.6410799 12.97296 16.54884 20.38932 24.229799 28.569241 32.387039"
-               y="0"
-               sodipodi:role="line"
-               id="tspan228">Zookeeper</tspan></text>
-        </g>
+         id="g102">
+        <path
+           d="m 441.92001,244.16 h 88.79996 V 260 h -88.79996 z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path104" />
       </g>
-      <path
-         d="m 442.82,282.84 v -5.66 h -1 v 5.66 z m 1.5,-4.66 -2,-4 -2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path232" />
-      <path
-         d="M 401.97,265.46 H 241.18 v 75.7 h 1 v -75.2 l -0.5,0.5 h 160.29 z m -162.29,74.7 2,4 2,-4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path234" />
+      <g
+         id="g106"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18079,10050.9)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text110"><tspan
+             x="0 183.50079 327.67999 452.19839 579.99359 668.46716 832.30719 996.14716 1071.5135 1271.3983 1359.8719 1487.6671 1576.1407 1720.3199 1884.1599 2028.3391"
+             y="0"
+             sodipodi:role="line"
+             id="tspan108">Session Listener</tspan></text>
+      </g>
+      <g
+         id="g112">
+        <path
+           d="m 378.56,274.23999 h 88.79999 v 15.84 H 378.56 Z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path114" />
+      </g>
+      <g
+         id="g116"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(15785.3,11229.3)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text120"><tspan
+             x="0 183.50079 347.34079 452.19839 599.65436 743.83356 888.01276 1015.808 1104.2816 1186.2015 1418.8544 1582.6943"
+             y="0"
+             sodipodi:role="line"
+             id="tspan118">Forecast App</tspan></text>
+      </g>
+      <g
+         id="g122">
+        <path
+           d="m 505.28,273.92001 h 88.80002 v 15.84 H 505.28 Z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path124" />
+      </g>
+      <g
+         id="g126"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(21110.1,11216.8)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text130"><tspan
+             x="0 288.3584 435.81439 616.03839 858.52161"
+             y="0"
+             sodipodi:role="line"
+             id="tspan128">MySQL</tspan></text>
+      </g>
+      <g
+         id="g132"
+         transform="translate(486.07999,199.36)">
+        <path
+           d="M 0,0 V -3.36 H 0.48 V 0 Z m -1.92,-2.24 2.08,-4.48 2.24,4.48 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path134" />
+      </g>
+      <g
+         id="g136"
+         transform="translate(486.07999,215.2)">
+        <path
+           d="M 0,0 V 3.36 H 0.48 V 0 Z M -1.92,2.24 0.16,6.56 2.4,2.24 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path138" />
+      </g>
+      <g
+         id="g140"
+         transform="translate(530.71997,207.67999)">
+        <path
+           d="m 0,0 h 19.84 l -0.32,-0.32 v 22.4 l 0.32,-0.32 H 3.2 v 0.48 H 20 V -0.64 H 0 Z M 4.32,19.84 0,22.08 4.32,24.16 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path142" />
+      </g>
+      <g
+         id="g144"
+         transform="translate(486.07999,237.60001)">
+        <path
+           d="M 0,0 V 3.36 H 0.48 V 0 Z M -1.92,2.24 0.16,6.56 2.4,2.24 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path146" />
+      </g>
+      <g
+         id="g148"
+         transform="translate(441.92001,251.84)">
+        <path
+           d="m 0,0 h -19.200001 v 19.040001 h 0.640002 V 0.32 l -0.32,0.32 H 0 Z m -21.120001,17.92 2.240002,4.48 2.24,-4.48 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path150" />
+      </g>
+      <g
+         id="g152"
+         transform="translate(530.71997,251.84)">
+        <path
+           d="M 0,0 H 19.200001 V 18.879999 H 18.559999 V 0.32 l 0.32,0.32 H 0 Z m 21.120001,17.76 -2.240002,4.32 -2.24,-4.32 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path154" />
+      </g>
+      <g
+         id="g156">
+        <path
+           d="m 441.92001,300.48001 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path158" />
+      </g>
+      <g
+         id="g160"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18765.9,12262.7)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text164"><tspan
+             x="0 219.54559 367.00159 530.84161 675.02081"
+             y="0"
+             sodipodi:role="line"
+             id="tspan162">Canal</tspan></text>
+      </g>
+      <g
+         id="g166"
+         transform="translate(549.91998,289.76001)">
+        <path
+           d="M 0,0 V 18.879999 H -16 V 18.24 h 15.68 l -0.32,0.319999 V 0 Z m -14.88,20.799999 -4.320001,-2.24 L -14.88,16.32 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path168" />
+      </g>
+      <g
+         id="g170">
+        <path
+           d="m 441.92001,322.72 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path172" />
+      </g>
+      <g
+         id="g174"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18747,13138.7)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text178"><tspan
+             x="0 239.20639 383.38559 491.51999 655.35999"
+             y="0"
+             sodipodi:role="line"
+             id="tspan176">Kafka</tspan></text>
+      </g>
+      <g
+         id="g180">
+        <path
+           d="m 441.92001,345.44 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#ff0000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path182" />
+      </g>
+      <g
+         id="g184"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18123.199,14033.6)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text188"><tspan
+             x="0 219.54559 383.38559 547.22559 655.35999 743.83356 907.67358 983.03998 1186.2015 1271.3983 1399.1936 1487.6671 1631.8463 1795.6864 1939.8656"
+             y="0"
+             sodipodi:role="line"
+             id="tspan186">Config Listener</tspan></text>
+      </g>
+      <g
+         id="g190"
+         transform="translate(486.07999,316.32001)">
+        <path
+           d="M 0,0 V 3.04 H 0.48 V 0 Z M -1.92,1.92 0.16,6.4 2.4,1.92 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path192" />
+      </g>
+      <g
+         id="g194"
+         transform="translate(486.07999,338.56)">
+        <path
+           d="M 0,0 V 3.52 H 0.48 V 0 Z M -1.92,2.4 0.16,6.88 2.4,2.4 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path196" />
+      </g>
+      <g
+         id="g198">
+        <path
+           d="m 441.92001,368 h 88.79996 v 15.84 h -88.79996 z"
+           style="fill:none;stroke:#000000;stroke-width:0.48;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:8;stroke-dasharray:none;stroke-opacity:1"
+           id="path200" />
+      </g>
+      <g
+         id="g202"
+         transform="scale(0.025391)">
+        <text
+           xml:space="preserve"
+           transform="translate(18444.6,14922.1)"
+           style="font-variant:normal;font-weight:normal;font-size:327.68px;font-family:F2;-inkscape-font-specification:F2;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text206"><tspan
+             x="0 203.16159 367.00159 530.84161 694.68158 838.86078 983.03998 1146.88 1291.0592"
+             y="0"
+             sodipodi:role="line"
+             id="tspan204">Zookeeper</tspan></text>
+      </g>
+      <g
+         id="g208"
+         transform="translate(486.07999,361.28)">
+        <path
+           d="M 0,0 V 3.36 H 0.48 V 0 Z M -1.92,2.24 0.16,6.72 2.4,2.24 Z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path210" />
+      </g>
+      <g
+         id="g212"
+         transform="translate(441.92001,376.16)">
+        <path
+           d="M 0,0 H -177.75999 V -73.760002 H -177.28 V -0.32 l -0.32001,-0.16 H 0 Z m -179.67999,-72.639999 2.07998,-4.480004 2.24001,4.480004 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path214" />
+      </g>
+      <g
+         id="g216"
+         transform="translate(264.16,260.32001)">
+        <path
+           d="m 0,0 v -53.279999 h 174.39999 v 0.64 H 0.16 l 0.32,-0.32 V 0 Z m 173.44,-55.200001 4.31999,2.240002 -4.31999,2.239998 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path218" />
+      </g>
+      <g
+         id="g220"
+         transform="translate(264.64001,283.20001)">
+        <path
+           d="M 0,0 V -3.84 H -0.48 V 0 Z m 1.92,-2.72 -2.24,-4.32 -2.08,4.32 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path222" />
+      </g>
+      <g
+         id="g224"
+         transform="scale(0.203125)">
+        <text
+           xml:space="preserve"
+           transform="translate(1249.28,1984.96)"
+           style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F1;-inkscape-font-specification:F1;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text228"><tspan
+             x="0 40.959999 81.919998"
+             y="0"
+             sodipodi:role="line"
+             id="tspan226">客户端</tspan></text>
+      </g>
+      <g
+         id="g230"
+         transform="scale(0.203125)">
+        <text
+           xml:space="preserve"
+           transform="translate(2335.52,1984.16)"
+           style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F1;-inkscape-font-specification:F1;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="text234"><tspan
+             x="0 40.959999 81.919998"
+             y="0"
+             sodipodi:role="line"
+             id="tspan232">服务器</tspan></text>
+      </g>
       <g
          id="g236">
-        <g
-           id="g238"
-           clip-path="url(#clipPath242)">
-          <path
-             d="m 241.18,386.86 v 52.48 h 157.79 v -1 H 241.68 l 0.5,0.5 v -51.98 z m 156.79,53.98 4,-2 -4,-2 z"
-             style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="path244" />
-        </g>
-      </g>
-      <path
-         d="m 242.18,360.5 v 6.94 h -1 v -6.94 z m 1.5,5.94 -2,4 -2,-4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path246" />
-      <g
-         id="g248">
-        <g
-           id="g250"
-           clip-path="url(#clipPath254)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,232.18,241.73)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text258"><tspan
-               x="0 7.5599999 15.12"
-               y="0"
-               sodipodi:role="line"
-               id="tspan256">客户端</tspan></text>
-        </g>
+        <path
+           d="m 363.51999,409.44 v -2.23999 H 364 V 409.44 Z m 0,-3.83999 v -2.24002 H 364 v 2.24002 z m 0,-3.84 v -2.24002 H 364 v 2.24002 z m 0,-3.84 v -2.24002 H 364 v 2.24002 z m 0,-3.84002 V 391.84 H 364 v 2.23999 z m 0,-3.84 V 388 H 364 v 2.23999 z m 0,-3.84 V 384.16 H 364 v 2.23999 z m 0,-3.83999 v -2.23999 H 364 V 382.56 Z m 0,-3.84 v -2.23999 H 364 V 378.72 Z m 0,-3.84 v -2.23999 H 364 V 374.88 Z m 0,-3.83999 v -2.24002 H 364 v 2.24002 z m 0,-4 v -2.08002 H 364 v 2.08002 z m 0,-3.84 V 361.12 H 364 v 2.08001 z m 0,-3.84002 V 357.28 H 364 v 2.07999 z m 0,-3.84 V 353.44 H 364 v 2.07999 z m 0,-3.84 V 349.44 H 364 v 2.23999 z m 0,-3.83999 v -2.23999 H 364 V 347.84 Z m 0,-3.84 v -2.23999 H 364 V 344 Z m 0,-3.84 v -2.23999 H 364 V 340.16 Z m 0,-3.83999 v -2.24002 H 364 v 2.24002 z m 0,-3.84 v -2.24002 H 364 v 2.24002 z m 0,-3.84 v -2.24002 H 364 v 2.24002 z m 0,-3.84002 V 322.56 H 364 v 2.23999 z m 0,-3.84 V 318.72 H 364 v 2.23999 z m 0,-3.83999 v -2.24 H 364 v 2.24 z m 0,-3.84 v -2.23999 H 364 V 313.28 Z m 0,-3.84 v -2.23999 H 364 V 309.44 Z m 0,-4 v -2.08001 H 364 V 305.44 Z m 0,-3.83999 v -2.08002 H 364 v 2.08002 z m 0,-3.84 v -2.08002 H 364 v 2.08002 z m 0,-3.84 V 291.84 H 364 v 2.08001 z m 0,-3.84002 V 287.84 H 364 v 2.23999 z m 0,-3.84 V 284 H 364 v 2.23999 z m 0,-3.84 V 280.16 H 364 v 2.23999 z m 0,-3.83999 v -2.23999 H 364 V 278.56 Z m 0,-3.84 v -2.23999 H 364 V 274.72 Z m 0,-3.84 v -2.23999 H 364 V 270.88 Z m 0,-3.83999 v -2.24002 H 364 v 2.24002 z m 0,-3.84 v -2.24002 H 364 v 2.24002 z m 0,-3.84002 V 257.12 H 364 v 2.23999 z m 0,-3.83999 v -2.24 H 364 v 2.24 z m 0,-3.84001 V 249.44 H 364 v 2.23999 z m 0,-3.83999 v -2.23999 H 364 V 247.84 Z m 0,-4 v -2.08001 H 364 V 243.84 Z m 0,-3.84 v -2.08 H 364 V 240 Z m 0,-3.84 v -2.08 H 364 v 2.08 z m 0,-3.83999 V 230.24 H 364 v 2.08001 z m 0,-3.84001 v -2.24 H 364 v 2.24 z m 0,-3.84 v -2.24001 H 364 V 224.64 Z m 0,-3.84 v -2.24 H 364 v 2.24 z m 0,-3.83999 V 214.72 H 364 v 2.24001 z m 0,-3.84002 V 210.88 H 364 v 2.23999 z m 0,-3.83999 v -2.24001 H 364 V 209.28 Z m 0,-3.84 V 203.2 H 364 v 2.24 z m 0,-3.83999 V 199.36 H 364 v 2.24001 z m 0,-3.84002 V 195.52 H 364 v 2.23999 z m 0,-3.83999 v -2.24001 H 364 V 193.92 Z m 0,-3.84 v -2.24 H 364 v 2.24 z m 0,-3.84 V 184 H 364 v 2.24 z m 0,-4 v -2.08 H 364 v 2.08 z m 0,-3.84001 v -2.07998 H 364 v 2.07998 z m 0,-3.83999 v -2.08 H 364 v 2.08 z m 0,-3.84 v -2.08 H 364 v 2.08 z m 0,-3.84 v -2.24 H 364 v 2.24 z m 0,-3.84001 V 160.8 H 364 v 2.23999 z M 364.64001,159.84 H 366.88 v 0.64 h -2.23999 z m 3.84,0 H 370.72 v 0.64 h -2.23999 z m 4,0 H 374.56 v 0.64 h -2.07999 z m 3.84,0 h 2.07998 v 0.64 h -2.07998 z m 3.83999,0 h 2.07999 v 0.64 H 380.16 Z m 3.84,0 h 2.07999 v 0.64 H 384 Z m 3.84,0 h 2.23999 v 0.64 H 387.84 Z m 3.83999,0 h 2.24002 v 0.64 h -2.24002 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 3.84002,0 H 405.44 v 0.64 h -2.23999 z m 3.84,0 H 409.28 v 0.64 h -2.23999 z m 3.83999,0 h 2.24 v 0.64 h -2.24 z m 3.84,0 h 2.23999 v 0.64 H 414.72 Z m 3.84,0 h 2.23999 v 0.64 H 418.56 Z m 3.83999,0 h 2.24002 v 0.64 h -2.24002 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 4,0 H 436.16 v 0.64 h -2.08001 z m 3.84002,0 H 440 v 0.64 h -2.07999 z m 3.84,0 H 443.84 v 0.64 h -2.07999 z m 3.84,0 h 2.07998 v 0.64 h -2.07998 z m 3.83999,0 h 2.23999 v 0.64 H 449.44 Z m 3.84,0 h 2.23999 v 0.64 H 453.28 Z m 3.84,0 h 2.23999 v 0.64 H 457.12 Z m 3.83999,0 h 2.24002 v 0.64 h -2.24002 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 3.84002,0 H 470.88 v 0.64 h -2.23999 z m 3.84,0 H 474.72 v 0.64 h -2.23999 z m 3.84,0 H 478.56 v 0.64 h -2.23999 z m 3.83999,0 h 2.23999 v 0.64 H 480.16 Z m 3.84,0 h 2.23999 v 0.64 H 484 Z m 3.84,0 h 2.23999 v 0.64 H 487.84 Z m 3.83999,0 h 2.24002 v 0.64 h -2.24002 z m 4,0 h 2.08002 v 0.64 h -2.08002 z m 3.84,0 h 2.08002 v 0.64 h -2.08002 z m 3.84,0 H 505.44 v 0.64 h -2.08001 z m 3.84002,0 H 509.28 v 0.64 h -2.07999 z m 3.84,0 h 2.24002 v 0.64 h -2.24002 z m 3.83999,0 h 2.24 v 0.64 h -2.24 z m 3.83997,0 h 2.24005 v 0.64 h -2.24005 z m 3.84003,0 h 2.23999 v 0.64 H 522.56 Z m 3.84002,0 h 2.23999 v 0.64 h -2.23999 z m 3.83997,0 h 2.23999 v 0.64 h -2.23999 z m 3.84003,0 h 2.23999 v 0.64 h -2.23999 z m 3.83996,0 h 2.23999 v 0.64 h -2.23999 z m 3.84003,0 H 544 v 0.64 h -2.23999 z m 3.83997,0 h 2.24005 v 0.64 h -2.24005 z m 3.84002,0 h 2.23999 v 0.64 H 549.44 Z m 3.84003,0 h 2.23999 v 0.64 h -2.23999 z m 4,0 h 2.07995 v 0.64 h -2.07995 z m 3.83997,0 h 2.08001 v 0.64 H 561.12 Z m 3.84002,0 h 2.07996 v 0.64 h -2.07996 z m 3.83997,0 H 570.88 v 0.64 h -2.08001 z m 3.84002,0 H 574.88 v 0.64 h -2.23999 z m 3.83997,0 h 2.23999 v 0.64 h -2.23999 z m 3.84003,0 H 582.56 v 0.64 h -2.23999 z m 3.83996,0 h 2.24005 v 0.64 h -2.24005 z m 3.84003,0 h 2.23999 v 0.64 H 588 Z m 3.84003,0 h 2.23999 v 0.64 h -2.23999 z m 3.83996,0 h 2.23999 v 0.64 h -2.23999 z m 3.84003,0 h 2.23999 v 0.64 h -2.23999 z m 3.83996,0 h 2.24 v 0.64 h -2.24 z m 3.84003,0 H 609.44 v 0.64 h -2.23999 z m 3.35999,1.12001 V 163.2 h -0.47998 v -2.23999 z m 0,3.83999 v 2.23999 h -0.47998 V 164.8 Z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.84001 V 178.56 h -0.47998 v -2.23999 z m 0,3.83999 v 2.23999 h -0.47998 V 180.16 Z m 0,3.84 v 2.24 h -0.47998 V 184 Z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.83999 V 193.92 h -0.47998 v -2.24001 z m 0,3.84001 v 2.23999 h -0.47998 V 195.52 Z m 0,3.84 v 2.24001 h -0.47998 V 199.36 Z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,4 v 2.08 h -0.47998 v -2.08 z m 0,3.83999 v 2.08 h -0.47998 v -2.08 z m 0,3.84001 v 2.08001 h -0.47998 V 214.88 Z m 0,3.84 v 2.08 h -0.47998 v -2.08 z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.83999 V 228.64 h -0.47998 v -2.24001 z m 0,3.84001 v 2.24 h -0.47998 v -2.24 z m 0,3.84 v 2.24001 h -0.47998 V 234.08 Z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.83999 V 244 h -0.47998 v -2.24001 z m 0,3.84002 V 247.84 h -0.47998 v -2.23999 z m 0,3.83999 v 2.23999 h -0.47998 V 249.44 Z m 0,3.84 v 2.24 h -0.47998 v -2.24 z m 0,3.84 v 2.23999 h -0.47998 V 257.12 Z m 0,3.83999 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84 v 2.24002 h -0.47998 v -2.24002 z m 0,4 V 270.88 h -0.47998 v -2.08001 z m 0,3.84002 V 274.72 h -0.47998 v -2.07999 z m 0,3.84 V 278.56 h -0.47998 v -2.07999 z m 0,3.84 v 2.07998 h -0.47998 v -2.07998 z m 0,3.83999 v 2.23999 h -0.47998 V 284.16 Z m 0,3.84 v 2.23999 h -0.47998 V 288 Z m 0,3.84 v 2.23999 h -0.47998 V 291.84 Z m 0,3.83999 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84002 V 309.44 h -0.47998 v -2.23999 z m 0,3.84 V 313.28 h -0.47998 v -2.23999 z m 0,3.83999 v 2.24 h -0.47998 v -2.24 z m 0,3.84 v 2.23999 h -0.47998 V 318.72 Z m 0,3.84 v 2.23999 h -0.47998 V 322.56 Z m 0,3.83999 v 2.24002 h -0.47998 v -2.24002 z m 0,4 v 2.08002 h -0.47998 v -2.08002 z m 0,3.84 v 2.08002 h -0.47998 v -2.08002 z m 0,3.84 V 340.16 h -0.47998 v -2.08001 z m 0,3.84002 V 344 h -0.47998 v -2.07999 z m 0,3.84 V 348 h -0.47998 v -2.23999 z m 0,3.84 V 351.84 h -0.47998 v -2.23999 z m 0,3.83999 v 2.23999 h -0.47998 V 353.44 Z m 0,3.84 v 2.23999 h -0.47998 V 357.28 Z m 0,3.84 v 2.23999 h -0.47998 V 361.12 Z m 0,3.83999 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84 v 2.24002 h -0.47998 v -2.24002 z m 0,3.84002 V 374.88 h -0.47998 v -2.23999 z m 0,3.84 V 378.72 h -0.47998 v -2.23999 z m 0,3.84 V 382.56 h -0.47998 v -2.23999 z m 0,3.83999 v 2.23999 h -0.47998 V 384.16 Z m 0,3.84 v 2.23999 h -0.47998 V 388 Z m 0,4 v 2.07999 h -0.47998 V 392 Z m 0,3.84 v 2.08001 h -0.47998 V 395.84 Z m 0,3.83999 v 2.08002 h -0.47998 v -2.08002 z m 0,3.84 v 2.08002 h -0.47998 v -2.08002 z m 0,3.84 v 2.40002 h -0.32001 V 409.12 h 0.16003 l -0.32,0.32 v -2.08001 z m -1.91999,2.40002 h -2.23999 V 409.12 h 2.23999 z m -3.84002,0 H 602.56 V 409.12 h 2.23999 z m -3.83997,0 h -2.24005 V 409.12 h 2.24005 z m -3.84002,0 h -2.24 V 409.12 h 2.24 z m -3.83997,0 h -2.24005 V 409.12 h 2.24005 z m -3.84003,0 h -2.23999 V 409.12 H 589.44 Z m -3.84002,0 h -2.24 V 409.12 h 2.24 z m -3.83997,0 h -2.23999 V 409.12 h 2.23999 z m -3.84003,0 h -2.23999 V 409.12 h 2.23999 z m -4,0 h -2.07995 V 409.12 h 2.07995 z m -3.83996,0 H 568 V 409.12 h 2.08002 z m -3.84003,0 h -2.08002 V 409.12 h 2.08002 z m -3.83997,0 h -2.08001 V 409.12 h 2.08001 z m -3.84002,0 h -2.23999 V 409.12 H 558.56 Z m -3.84003,0 h -2.23999 V 409.12 h 2.23999 z m -3.83997,0 h -2.23999 V 409.12 H 550.88 Z m -3.84002,0 h -2.23999 V 409.12 h 2.23999 z m -3.83997,0 h -2.23999 V 409.12 h 2.23999 z m -3.84003,0 H 537.12 V 409.12 h 2.23998 z m -3.83996,0 h -2.23999 V 409.12 h 2.23999 z m -3.84003,0 H 529.44 V 409.12 h 2.23999 z m -3.83996,0 h -2.24005 V 409.12 h 2.24005 z m -3.84003,0 h -2.23999 V 409.12 H 524 Z m -3.84003,0 h -2.23999 V 409.12 h 2.23999 z m -3.83996,0 h -2.23999 V 409.12 h 2.23999 z m -4,0 h -2.08002 V 409.12 h 2.08002 z m -3.84,0 h -2.08002 V 409.12 h 2.08002 z m -3.84,0 H 502.56 V 409.12 h 2.08001 z m -3.84002,0 H 498.72 V 409.12 h 2.07999 z m -3.84,0 H 494.72 V 409.12 h 2.23999 z m -3.83999,0 h -2.24 V 409.12 h 2.24 z m -3.84,0 h -2.23999 V 409.12 H 489.28 Z m -3.84,0 h -2.23999 V 409.12 H 485.44 Z m -3.83999,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84002,0 H 467.84 V 409.12 h 2.23999 z m -3.84,0 H 464 V 409.12 h 2.23999 z m -3.84,0 H 460.16 V 409.12 h 2.23999 z m -3.83999,0 h -2.23999 V 409.12 H 458.56 Z m -3.84,0 h -2.23999 V 409.12 H 454.72 Z m -4,0 h -2.07999 V 409.12 H 450.72 Z m -3.84,0 h -2.08001 V 409.12 H 446.88 Z m -3.83999,0 h -2.08002 V 409.12 h 2.08002 z m -3.84,0 H 437.12 V 409.12 h 2.08001 z m -3.84002,0 H 433.12 V 409.12 h 2.23999 z m -3.84,0 H 429.28 V 409.12 h 2.23999 z m -3.84,0 H 425.44 V 409.12 h 2.23999 z m -3.83999,0 h -2.23999 V 409.12 H 423.84 Z m -3.84,0 h -2.23999 V 409.12 H 420 Z m -3.84,0 h -2.23999 V 409.12 H 416.16 Z m -3.83999,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84002,0 H 398.56 V 409.12 h 2.23999 z m -3.84,0 H 394.72 V 409.12 h 2.23999 z m -3.83999,0 h -2.24 V 409.12 h 2.24 z m -4,0 h -2.07999 V 409.12 H 389.12 Z m -3.84,0 h -2.07999 V 409.12 H 385.28 Z m -3.84,0 h -2.08001 V 409.12 H 381.44 Z m -3.83999,0 h -2.08002 V 409.12 h 2.08002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84,0 h -2.24002 V 409.12 h 2.24002 z m -3.84002,0 H 363.84 V 409.12 h 2.23999 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path238" />
       </g>
       <g
-         id="g260">
-        <g
-           id="g262"
-           clip-path="url(#clipPath266)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,430.99,241.73)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text270"><tspan
-               x="0 7.5599999 15.12"
-               y="0"
-               sodipodi:role="line"
-               id="tspan268">服务器</tspan></text>
-        </g>
-      </g>
-      <path
-         d="M 330.6,236.16 H 554.76 V 486 H 330.6 Z"
-         style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path272" />
-      <path
-         d="m 344.4,336 c 0,9.15 7.41,16.56 16.56,16.56 h 162.72 c 9.15,0 16.56,-7.41 16.56,-16.56 v -66.24 c 0,-9.15 -7.41,-16.56 -16.56,-16.56 H 360.96 c -9.15,0 -16.56,7.41 -16.56,16.56 z"
-         style="fill:none;stroke:#c00000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1"
-         id="path274" />
-      <g
-         id="g276">
-        <g
-           id="g278"
-           clip-path="url(#clipPath282)">
-          <text
-             xml:space="preserve"
-             transform="matrix(1,0,0,-1,351.7,465.98)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text286"><tspan
-               x="0 7.5599999 15.12 22.68 30.24"
-               y="0"
-               sodipodi:role="line"
-               id="tspan284">分析服务器</tspan></text>
-        </g>
+         id="g240"
+         transform="translate(378.39999,373.12)">
+        <path
+           d="M 0,0 V -2.24 H 0.48 V 0 Z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-3.84 v -2.24 h 0.48 v 2.24 z m 0,-4.000001 v -2.08 h 0.48 v 2.08 z m 0,-3.84 v -2.08 h 0.48 v 2.08 z m 0,-3.84 v -2.08 h 0.48 v 2.08 z m 0,-3.839998 v -2.08 h 0.48 v 2.08 z m 0,-3.840002 v -2.239998 h 0.48 v 2.239998 z m 0,-3.84 v -2.239998 h 0.48 v 2.239998 z m 0,-3.840001 v -2.239997 h 0.48 v 2.239997 z m 0,-3.84 V -48.48 h 0.48 v 2.239998 z m 0,-3.84 V -52.32 h 0.48 v 2.239998 z m 0,-3.839996 V -56.16 h 0.48 v 2.240002 z m 0,-3.84 V -60 h 0.48 v 2.240002 z m 0,-3.84 v -0.32 V -63.52 l 0.16,-0.32 H 0.64 V -63.360001 -63.52 l -0.16,1.600002 v 0 0.32 z m 0.32,-3.840004 0.32,-1.119996 0.48,-1.120002 0.48,0.160003 -0.48,1.119995 v 0 l -0.16,0.96 z m 1.44,-3.680001 0.16,-0.319999 0.64,-1.279999 0.32,-0.32 0.48,0.32 -0.32,0.319999 v 0 l -0.64,1.279999 v 0 l -0.16,0.160004 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path242" />
       </g>
       <g
-         id="g288">
+         id="g244"
+         transform="translate(382.39999,300.79999)">
+        <path
+           d="M 0,0 0.64,-0.64 1.6,-1.6 1.92,-1.28 0.96,-0.32 v 0 L 0.48,0.32 Z m 2.88,-2.56 1.28,-0.8 0.64,-0.32 0.32,0.48 -0.64,0.32 v 0 L 3.2,-2.24 Z M 6.4,-4.32 7.04,-4.64 8.48,-4.96 h 0.16 v 0.48 0 0 L 7.2,-4 v 0 l -0.64,0.16 z m 3.84,-0.96 h 1.44 0.8 v 0.48 h -0.8 v 0 l -1.44,0.16 z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.84,0 H 24 v 0.48 h -2.24 z m 3.84,0 h 2.24 V -4.8 H 25.6 Z m 3.840001,0 H 31.68 v 0.48 h -2.239999 z m 3.999998,0 H 35.52 v 0.48 h -2.080001 z m 3.84,0 h 2.080002 v 0.48 h -2.080002 z m 3.84,0 h 2.080002 v 0.48 h -2.080002 z m 3.84,0 h 2.080002 v 0.48 h -2.080002 z m 3.84,0 h 2.240002 v 0.48 h -2.240002 z m 3.84,0 h 2.240002 v 0.48 h -2.240002 z m 3.840001,0 h 2.240001 V -4.8 H 56.48 Z m 3.84,0 h 2.240001 V -4.8 H 60.32 Z m 3.840004,0 h 2.239998 V -4.8 H 64.160004 Z M 68,-5.28 h 2.239998 V -4.8 H 68 Z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path246" />
+      </g>
+      <g
+         id="g248"
+         transform="translate(454.23999,295.51999)">
+        <path
+           d="M 0,0 H 2.24 V 0.48 H 0 Z M 3.84,0 H 6.08 V 0.48 H 3.84 Z M 7.68,0 H 9.92 V 0.48 H 7.68 Z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.840001,0 h 2.24 v 0.48 h -2.24 z m 4,0 h 2.08 v 0.48 h -2.08 z m 3.84,0 h 2.08 v 0.48 h -2.08 z m 3.839998,0 h 2.08 v 0.48 h -2.08 z m 3.840002,0 h 2.079998 v 0.48 h -2.079998 z m 3.84,0 h 2.239998 v 0.48 h -2.239998 z m 3.840001,0 h 2.239997 v 0.48 h -2.239997 z m 3.84,0 H 48.48 v 0.48 h -2.239998 z m 3.84,0 H 52.32 v 0.48 h -2.239998 z m 3.839996,0 H 56.16 v 0.48 h -2.240002 z m 3.84,0 H 60 v 0.48 h -2.240002 z m 3.84,0 H 63.84 v 0.48 h -2.240002 z m 3.840004,0 H 67.68 v 0.48 h -2.239998 z m 3.839997,0 h 2.239998 v 0.48 h -2.239998 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path250" />
+      </g>
+      <g
+         id="g252"
+         transform="translate(527.35998,295.51999)">
+        <path
+           d="M 0,0 H 2.24 V 0.48 H 0 Z M 3.84,0 H 6.08 V 0.48 H 3.84 Z M 7.68,0 H 9.92 V 0.48 H 7.68 Z m 4,0 h 2.08 v 0.48 h -2.08 z m 3.84,0 h 2.08 v 0.48 h -2.08 z m 3.840001,0 h 2.08 v 0.48 h -2.08 z m 3.84,0 h 2.08 v 0.48 h -2.08 z m 3.84,0 h 2.24 v 0.48 h -2.24 z m 3.839998,0 h 2.24 v 0.48 h -2.24 z m 3.840002,0 h 2.239998 v 0.48 h -2.239998 z m 3.84,0 h 2.239998 v 0.48 h -2.239998 z m 3.840001,0 h 2.239997 v 0.48 h -2.239997 z m 3.84,0 H 48.48 v 0.48 h -2.239998 z m 3.84,0 H 51.200001 52.32 V 0.64 L 51.200001,0.48 v 0 h -1.119999 z m 3.839996,0.32 h 0.480004 L 55.84,0.64 56.16,0.8 56,1.28 h -0.32 v 0 L 54.240002,0.8 v 0 h -0.320004 z m 3.84,1.12 0.960003,0.48 L 59.68,2.56 59.360001,3.04 58.400002,2.4 v 0 L 57.439999,1.92 Z m 3.200001,2.08 h 0.16 l 1.120003,1.12 0.479999,0.32 -0.479999,0.48 -0.320004,-0.48 v 0 L 60.799999,4 v 0 l -0.16,-0.16 z M 63.68,6.24 64.160004,6.88 64.959999,8.16 64.480003,8.48 63.84,7.2 v 0 L 63.360001,6.56 Z m 2.080002,3.36 0.479996,1.44 0.160004,0.8 -0.480004,0.16 -0.159996,-0.8 v 0 L 65.279999,9.92 Z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path254" />
+      </g>
+      <g
+         id="g256"
+         transform="translate(594.08002,308.95999)">
+        <path
+           d="m 0,0 0.16,0.64 v 1.6 H -0.32 L -0.48,0.64 V 0.8 0 Z M 0.16,3.84 V 6.08 H -0.32 V 3.84 Z m 0,3.84 V 9.92 H -0.32 V 7.68 Z m 0,3.84 v 2.24 h -0.48 v -2.24 z m 0,3.84 v 2.24 h -0.48 v -2.24 z m 0,3.840001 v 2.24 h -0.48 v -2.24 z m 0,4 v 2.08 h -0.48 v -2.08 z m 0,3.84 v 2.08 h -0.48 v -2.08 z m 0,3.839998 v 2.08 h -0.48 v -2.08 z m 0,3.840002 v 2.079998 h -0.48 v -2.079998 z m 0,3.84 v 2.239998 h -0.48 v -2.239998 z m 0,3.840001 v 2.239997 h -0.48 v -2.239997 z m 0,3.84 V 48.48 h -0.48 v -2.239998 z m 0,3.84 V 52.32 h -0.48 v -2.239998 z m 0,3.839996 V 56.16 h -0.48 v -2.240002 z m 0,3.84 V 60 h -0.48 v -2.240002 z m 0,3.84 V 63.84 h -0.48 v -2.240002 z m 0,3.840004 v 0.32 l -0.32,1.599999 V 67.68 l -0.64,-0.160003 0.16,-0.32 v 0 l 0.16,-1.599999 v 0.160004 -0.32 z m -0.8,3.839997 -0.32,0.959999 -0.64,1.120003 -0.48,-0.160004 0.48,-1.119995 v 0 l 0.32,-0.959999 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path258" />
+      </g>
+      <g
+         id="g260"
+         transform="translate(591.67999,381.76001)">
+        <path
+           d="m 0,0 -0.16,0.16 -0.8,1.12 -0.48,0.48 -0.32,-0.32 0.32,-0.48 v 0 l 0.96,-1.12 v 0 -0.16 z m -2.56,3.04 -0.64,0.48 -1.12,0.8 -0.32,-0.48 1.12,-0.8 v 0 L -2.88,2.56 Z M -5.76,5.28 -7.04,5.76 -7.84,6.08 -8,5.6 -7.2,5.28 v 0 L -6.08,4.8 Z m -3.68,1.28 -0.48,0.16 -1.6,0.32 h -0.16 V 6.4 h 0.16 v 0 l 1.44,-0.16 v 0 L -9.6,6.08 Z m -3.84,0.48 h -2.24 V 6.56 h 2.24 z m -3.840001,0 h -2.24 V 6.56 h 2.24 z m -3.839998,0 h -2.240002 V 6.56 h 2.240002 z m -3.84,0 h -2.240002 V 6.56 h 2.240002 z m -3.84,0 h -2.24 V 6.56 h 2.24 z m -3.840001,0 h -2.240001 V 6.56 H -32.48 Z m -4,0 h -2.080001 V 6.56 H -36.48 Z m -3.84,0 h -2.080002 V 6.56 H -40.32 Z m -3.84,0 h -2.080002 V 6.56 H -44.16 Z m -3.84,0 h -2.080002 V 6.56 H -48 Z m -3.84,0 h -2.240002 V 6.56 H -51.84 Z m -3.84,0 h -2.239998 V 6.56 H -55.68 Z m -3.84,0 h -2.239998 V 6.56 H -59.52 Z m -3.840001,0 h -2.239997 V 6.56 h 2.239997 z m -3.839996,0 h -2.240005 V 6.56 h 2.240005 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path262" />
+      </g>
+      <g
+         id="g264"
+         transform="translate(520.64001,388.79999)">
+        <path
+           d="M 0,0 H -2.24 V -0.48 H 0 Z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.840001,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -4,0 h -2.08 v -0.48 h 2.08 z m -3.839998,0 h -2.08 v -0.48 h 2.08 z m -3.840002,0 h -2.079998 v -0.48 h 2.079998 z m -3.84,0 h -2.079998 v -0.48 h 2.079998 z m -3.840001,0 h -2.239997 v -0.48 h 2.239997 z m -3.84,0 H -48.48 v -0.48 h 2.239998 z m -3.84,0 H -52.32 v -0.48 h 2.239998 z m -3.839996,0 H -56.16 v -0.48 h 2.240002 z m -3.84,0 H -60 v -0.48 h 2.240002 z m -3.84,0 H -63.84 v -0.48 h 2.240002 z m -3.840004,0 H -67.68 v -0.48 h 2.239998 z m -3.839997,0 h -2.239998 v -0.48 h 2.239998 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path266" />
+      </g>
+      <g
+         id="g268"
+         transform="translate(447.51999,388.79999)">
+        <path
+           d="M 0,0 H -2.24 V -0.48 H 0 Z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -3.84,0 h -2.24 v -0.48 h 2.24 z m -4,0 h -2.08 v -0.48 h 2.08 z m -3.840001,0 h -2.08 v -0.48 h 2.08 z m -3.84,0 h -2.08 v -0.48 h 2.08 z m -3.84,0 h -2.08 v -0.48 h 2.08 z m -3.839998,0 h -2.24 v -0.48 h 2.24 z m -3.840002,0 h -2.239998 v -0.48 h 2.239998 z m -3.84,0 h -2.239998 v -0.48 h 2.239998 z m -3.840001,0 h -2.239997 v -0.48 h 2.239997 z m -3.84,0 H -48.48 v -0.48 h 2.239998 z m -3.84,0 H -52.32 v -0.48 h 2.239998 z m -3.839996,0 h -1.120003 L -56.16,-0.16 V -0.8 l 1.119999,0.16 v 0 l 1.120003,0.16 z m -3.84,-0.64 h -0.320004 L -59.52,-1.28 l -0.32,-0.16 0.16,-0.48 0.319999,0.16 v 0 l 1.440003,0.48 v 0 l 0.32,0.16 z m -3.680001,-1.6 -0.800003,-0.48 -0.959999,-0.64 0.32,-0.48 0.960003,0.8 V -3.2 l 0.799999,0.64 z m -3.040004,-2.24 v -0.16 l -1.119995,-1.12 -0.32,-0.48 0.32,-0.32 0.479995,0.48 v 0 l 0.959999,1.12 v 0 0 z m -2.399994,-3.2 -0.32,-0.48 L -68,-9.6 v 0 l 0.639999,-0.16 v 0 0 l 0.64,1.28 v 0 l 0.319999,0.64 z m -1.600006,-3.52 -0.32,-1.28 -0.159996,-0.96 h 0.479996 l 0.160003,0.8 v 0 l 0.32,1.28 z m -0.64,-3.84 v -0.64 h 0.480004 v 0.64 z"
+           style="fill:#7f7f7f;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path270" />
+      </g>
+      <g
+         id="g272"
+         transform="matrix(0,0.203125,-0.203125,0,0,0)">
         <g
-           id="g290"
-           clip-path="url(#clipPath294)">
+           id="g274" />
+        <g
+           id="g276"
+           transform="matrix(0,-1,-1,0,1004.32,-2859.8401)">
           <text
              xml:space="preserve"
-             transform="matrix(1,0,0,-1,351.7,339.94)"
-             style="font-variant:normal;font-weight:normal;font-size:7.56px;font-family:DengXian;-inkscape-font-specification:DengXian;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-             id="text298"><tspan
-               x="0 7.5599999 15.12 22.68 30.24"
+             transform="matrix(1,0,0,-1,-20.48,-35.200001)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text280"><tspan
+               x="0"
                y="0"
-               sodipodi:role="line"
-               id="tspan296">配置服务器</tspan></text>
+               id="tspan278">分</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-76.160004)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text284"><tspan
+               x="0"
+               y="0"
+               id="tspan282">析</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-117.12)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text288"><tspan
+               x="0"
+               y="0"
+               id="tspan286">服</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-158.08)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text292"><tspan
+               x="0"
+               y="0"
+               id="tspan290">务</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-199.03999)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text296"><tspan
+               x="0"
+               y="0"
+               id="tspan294">器</tspan></text>
         </g>
       </g>
-      <path
-         d="m 402.04,463.82 h -17.7 V 376.5 h 1 v 86.82 l -0.5,-0.5 h 17.2 z m -19.2,-86.32 2,-4 2,4 z"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path300" />
+      <g
+         id="g298"
+         transform="matrix(0,0.203125,-0.203125,0,0,0)">
+        <g
+           id="g300" />
+        <g
+           id="g302"
+           transform="matrix(0,-1,-1,0,1594.24,-2861.4399)">
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-35.200001)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text306"><tspan
+               x="0"
+               y="0"
+               id="tspan304">配</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-76.160004)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text310"><tspan
+               x="0"
+               y="0"
+               id="tspan308">置</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-117.12)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text314"><tspan
+               x="0"
+               y="0"
+               id="tspan312">服</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-158.08)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text318"><tspan
+               x="0"
+               y="0"
+               id="tspan316">务</tspan></text>
+          <text
+             xml:space="preserve"
+             transform="matrix(1,0,0,-1,-20.48,-199.03999)"
+             style="font-variant:normal;font-weight:normal;font-size:40.96px;font-family:F3;-inkscape-font-specification:F3;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="text322"><tspan
+               x="0"
+               y="0"
+               id="tspan320">器</tspan></text>
+        </g>
+      </g>
+      <g
+         id="g324"
+         transform="translate(441.92001,184.48)">
+        <path
+           d="m 0,0 h -19.200001 v 86.400002 h 0.640002 V 0.32 l -0.32,0.16 H 0 Z m -21.120001,85.279999 2.240002,4.480003 2.24,-4.480003 z"
+           style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path326" />
+      </g>
     </g>
   </g>
 </svg>

@@ -43,10 +43,9 @@ services:
 
   # mq
   rabbitmq: # 开启 delayed_message_exchange 扩展
-    image: rabbitmq:3.11.1-management
+    image: rabbitmq:3.11.1
     ports:
       - 5672:5672
-      - 15672:15672
     volumes:
       - ./conf/enabled_plugins:/etc/rabbitmq/enabled_plugins
       - ./libs/rabbitmq_delayed_message_exchange-3.11.1/:/opt/rabbitmq/plugins/rabbitmq_delayed_message_exchange-3.11.1/

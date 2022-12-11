@@ -1,24 +1,11 @@
 # 前提准备
 
-搭建三台主机，分别为 Windows、Debian、CentOS（7.x 版本），并且确定域名和 IP 地址的映射关系，例如：
+搭建两台主机，分别为 Windows、CentOS（7.x 版本），并且确定域名和 IP 地址的映射关系，例如：
 
 ```
-192.168.157.1   windows
-192.168.157.128 debian
-192.168.157.130 centos
+192.168.157.1   windows # 安装 OpenJDK 11、Maven
+192.168.157.130 centos  # 安装 Docker、Python。
 ```
-
-* Windows 配置
-
-安装 OpenJDK 11、Maven。
-
-* Debian 配置
-
-安装 Python。
-
-* CentOS 配置
-
-安装 Docker。
 
 # 运行环境
 
@@ -31,7 +18,11 @@ $ cd sniff-srv/docker
 $ docker compose up -d # 启动 Docker 服务
 ```
 
-* MySQL 配置
+```
+$ cd sniff-src/python
+$ python -m pip install flask torch pytorch_lightning redis # （1）安装依赖
+$ python main.py （2）启动 Flask 服务
+```
 
 ```
 $ cd sniff-src/sql
@@ -42,14 +33,6 @@ $ mysql -hcentos -uroot -p db \
   # （2）插入示例配置（注意：启动 Windows 系统的 Spring Boot 服务之后执行这段代码）
 ```
 
-* Debian 配置
-
-```
-$ cd sniff-src/python
-$ python -m pip install flask torch pytorch_lightning redis # （1）安装依赖
-$ python main.py （2）启动 Flask 服务
-```
-
 * Windows 配置
 
 ```
@@ -58,8 +41,6 @@ $ mvn spring-boot:run # 启动 Spring Boot 服务
 ```
 
 ## 客户端
-
-* Debian 配置
 
 ```
 $ cd sniff-cli

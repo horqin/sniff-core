@@ -1,4 +1,4 @@
-package org.sniff.entity;
+package org.sniff.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @TableName("tb_session")
-public class SessionEntity {
+public class Session {
     // 主键
     private Long    id;
     // 协议
@@ -35,9 +35,9 @@ public class SessionEntity {
                 : String.join("@", protocol, dstHost, srcHost);
     }
 
-    public static SessionEntity decode(String session, Integer forecast, Date createDate) {
+    public static Session decode(String session, Integer forecast, Date createDate) {
         String[] s = session.split("@");
-        return new SessionEntity(null, s[0], s[1], Integer.parseInt(s[2]), s[3], Integer.parseInt(s[4]),
+        return new Session(null, s[0], s[1], Integer.parseInt(s[2]), s[3], Integer.parseInt(s[4]),
                 forecast, createDate);
     }
 }

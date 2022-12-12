@@ -1,10 +1,10 @@
 package org.sniff.service;
 
-import org.sniff.entity.ConfigEntity;
+import org.sniff.pojo.Config;
 
 import java.util.List;
 
 public interface ConfigService {
 
-    void config(String type, List<ConfigEntity> configs) throws Exception;
+    void config(String type, List<Config> configs) throws Exception;
 }

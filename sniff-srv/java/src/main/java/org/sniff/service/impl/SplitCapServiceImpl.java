@@ -6,7 +6,7 @@ import io.pkts.packet.IPv4Packet;
 import io.pkts.packet.IPv6Packet;
 import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
-import org.sniff.entity.SessionEntity;
+import org.sniff.pojo.Session;
 import org.sniff.service.SplitCapService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -53,7 +53,7 @@ public class SplitCapServiceImpl implements SplitCapService {
                     : (TransportPacket) packet.getPacket(Protocol.UDP);
 
             // 生成 session、payload、arrivalTime，其中，session 为五元组生成且唯一，payload 为负载，arrivalTime 为到达时刻
-            String session = SessionEntity.encode(transportPacket.getProtocol().getName(),
+            String session = Session.encode(transportPacket.getProtocol().getName(),
                     ipPacket.getSourceIP(), transportPacket.getSourcePort(),
                     ipPacket.getDestinationIP(), transportPacket.getDestinationPort());
             String payload = new String(ipPacket.getPayload().getArray(), StandardCharsets.US_ASCII);

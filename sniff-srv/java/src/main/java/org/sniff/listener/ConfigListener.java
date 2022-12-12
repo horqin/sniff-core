@@ -3,7 +3,7 @@ package org.sniff.listener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import lombok.Data;
-import org.sniff.entity.ConfigEntity;
+import org.sniff.pojo.Config;
 import org.sniff.service.ConfigService;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
@@ -34,7 +34,7 @@ public class ConfigListener {
     // 配置服务器
     @KafkaListener(topics = "config-topic", groupId = "my-group")
     public void consume(String message) {
-        Message<ConfigEntity> msg = new Gson().fromJson(message, new TypeToken<Message<ConfigEntity>>(){}.getType());
+        Message<Config> msg = new Gson().fromJson(message, new TypeToken<Message<Config>>(){}.getType());
         try {
             configService.config(msg.getType(), msg.getData());
         } catch (Exception e) {

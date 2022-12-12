@@ -3,7 +3,7 @@ package org.sniff.service.impl;
 import com.google.common.collect.Sets;
 import com.google.gson.Gson;
 import org.apache.curator.framework.CuratorFramework;
-import org.sniff.entity.ConfigEntity;
+import org.sniff.pojo.Config;
 import org.sniff.service.ConfigService;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +17,9 @@ public class ConfigServiceImpl implements ConfigService {
     private CuratorFramework curatorFramework;
 
     @Override
-    public void config(String type, List<ConfigEntity> configs) throws Exception {
+    public void config(String type, List<Config> configs) throws Exception {
         if (Sets.newHashSet("INSERT", "DELETE", "UPDATE").contains(type)) {
-            for (ConfigEntity config : configs) {
+            for (Config config : configs) {
                 String path = "/config/" + config.getName();
                 if ("INSERT".equals(type)) {
                     curatorFramework.create().creatingParentsIfNeeded().forPath(path,

@@ -1,7 +1,7 @@
 package org.sniff.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.sniff.entity.SessionEntity;
+import org.sniff.pojo.Session;
 
-public interface SessionMapper extends BaseMapper<SessionEntity> {
+public interface SessionMapper extends BaseMapper<Session> {
 }

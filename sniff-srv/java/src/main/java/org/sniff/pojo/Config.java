@@ -1,4 +1,4 @@
-package org.sniff.entity;
+package org.sniff.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @TableName("tb_config")
-public class ConfigEntity {
+public class Config {
     // 主键
     private Long    id;
     // 名称

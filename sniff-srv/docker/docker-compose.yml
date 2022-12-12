@@ -3,13 +3,22 @@ version: '2'
 services:
 
   # sql
-  mysql: # 开启 binlog 功能
+  mysql-0: # 开启 binlog 功能
     image: mysql:8.0.29
     ports:
       - 3306:3306
     volumes:
       - ./conf/my.cnf:/etc/mysql/my.cnf
-      - ./data/mysql/:/var/lib/mysql/ # MySQL 持久化
+      - ./data/mysql-0/:/var/lib/mysql/ # MySQL 持久化
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  mysql-1: # 开启 binlog 功能
+    image: mysql:8.0.29
+    ports:
+      - 3307:3306
+    volumes:
+      - ./conf/my.cnf:/etc/mysql/my.cnf
+      - ./data/mysql-1/:/var/lib/mysql/ # MySQL 持久化
     environment:
       - MYSQL_ROOT_PASSWORD=root
   canal:
@@ -18,7 +27,7 @@ services:
       - 11111:11111
     environment:
       # sql
-      - canal.instance.master.address=mysql:3306
+      - canal.instance.master.address=mysql-0:3306
       - canal.instance.dbUsername=root
       - canal.instance.dbPassword=root
       - canal.instance.filter.regex=db.tb_config
@@ -28,7 +37,8 @@ services:
       - canal.mq.topic=config-topic
       - canal.mq.flatMessage=true
     depends_on:
-      - mysql
+      - mysql-0
+      - mysql-1
       - kafka
 
   # nosql

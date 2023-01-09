@@ -6,6 +6,7 @@ import io.pkts.packet.IPv4Packet;
 import io.pkts.packet.IPv6Packet;
 import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.sniff.pojo.Session;
 import org.sniff.service.SplitCapService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -16,8 +17,7 @@ import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 
@@ -37,7 +37,12 @@ public class SplitCapServiceImpl implements SplitCapService {
 
     @Override
     public void splitCap(InputStream inputStream) throws IOException {
-        Pcap.openStream(inputStream).loop(packet -> {
+        File file = File.createTempFile("splitCap", ".pcap");
+        try (OutputStream outputStream = new FileOutputStream(file)) {
+            IOUtils.copy(inputStream, outputStream);
+        }
+
+        Pcap.openStream(file).loop(packet -> {
             // 无法解析，跳过
             if (!(packet.hasProtocol(Protocol.IPv4) || packet.hasProtocol(Protocol.IPv6))
                     || !(packet.hasProtocol(Protocol.TCP) || packet.hasProtocol(Protocol.UDP))) {
@@ -77,5 +82,7 @@ public class SplitCapServiceImpl implements SplitCapService {
 
             return true;
         });
+
+        file.delete();
     }
 }

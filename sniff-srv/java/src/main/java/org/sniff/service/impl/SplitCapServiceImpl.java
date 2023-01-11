@@ -6,7 +6,6 @@ import io.pkts.packet.IPv4Packet;
 import io.pkts.packet.IPv6Packet;
 import io.pkts.packet.TransportPacket;
 import io.pkts.protocol.Protocol;
-import org.apache.commons.io.FileUtils;
 import org.sniff.pojo.Session;
 import org.sniff.service.SplitCapService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -36,13 +35,8 @@ public class SplitCapServiceImpl implements SplitCapService {
     private RabbitTemplate rabbitTemplate;
 
     @Override
-    public void splitCap(InputStream inputStream) throws IOException {
-        // 转储临时文件
-        File file = File.createTempFile("splitCap", ".pcap");
-        FileUtils.copyInputStreamToFile(inputStream, file);
-
-        // 分析 PCAP 格式文件
-        Pcap.openStream(file).loop(packet -> {
+    public void splitCap(InputStream inputStream) throws IOException, IllegalArgumentException {
+        Pcap.openStream(inputStream).loop(packet -> {
             // 无法解析，跳过
             if (!(packet.hasProtocol(Protocol.IPv4) || packet.hasProtocol(Protocol.IPv6))
                     || !(packet.hasProtocol(Protocol.TCP) || packet.hasProtocol(Protocol.UDP))) {
@@ -82,8 +76,5 @@ public class SplitCapServiceImpl implements SplitCapService {
 
             return true;
         });
-
-        // 删除临时文件
-        file.delete();
     }
 }

@@ -1,9 +1,9 @@
 # 前提准备
 
-搭建两台主机，分别为 Windows、CentOS（7.x 版本），并且确定域名和 IP 地址的映射关系，例如：
+搭建两台主机，分别为 Debian、CentOS（7.x 版本），并且确定域名和 IP 地址的映射关系，例如：
 
 ```
-192.168.157.1   windows # 安装 OpenJDK 11、Maven
+192.168.157.128 debian  # 安装 OpenJDK 11、Maven
 192.168.157.130 centos  # 安装 Docker、Python。
 ```
 
@@ -33,11 +33,11 @@ $ mysql -hcentos --port=3306 -uroot -p db < db.sql
 $ mysql -hcentos --port=3307 -uroot -p db < db.sql
 $
 $ mysql -hcentos --port=3306 -uroot -p db \
-  -e "insert into tb_config values (null, 'cli-01', 'ens33', 'port 22', 'http://windows:5678/splitCap');" \
+  -e "insert into tb_config values (null, 'cli-01', 'ens33', 'port 22', 'http://debian:5678/splitCap');" \
   # （2）插入示例配置（注意：启动 Windows 系统的 Spring Boot 服务之后执行这段代码）
 ```
 
-* Windows 配置
+* Debian 配置
 
 ```
 $ cd sniff-srv/java
@@ -45,6 +45,8 @@ $ mvn spring-boot:run # 启动 Spring Boot 服务
 ```
 
 ## 客户端
+
+* Debian 配置
 
 ```
 $ cd sniff-cli

@@ -28,7 +28,7 @@ public class SessionServiceImpl implements SessionService {
         if (stringRedisTemplate.opsForSet().add("done-session-entry", session) == 1) {
             // 若是并不存在，那么占位，并且在日志中记录预测结果
             String forecast = forecastFeign.forecast(session);
-            sessionMapper.insert(Session.decode(session, Integer.parseInt(forecast), new Date()));
+            sessionMapper.insert(Session.decode(session, Integer.parseInt(forecast)));
 
             // 安全地删除
             stringRedisTemplate.opsForZSet().removeRange("session::" + session, 0, -1);

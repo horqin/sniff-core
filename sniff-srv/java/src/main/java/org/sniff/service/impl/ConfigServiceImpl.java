@@ -26,7 +26,7 @@ public class ConfigServiceImpl implements ConfigService {
     private void synchronizing() throws Exception {
         List<Config> configs = configMapper.selectList(new QueryWrapper<>());
         for (Config config : configs) {
-            String path = "/config/" + config.getName();
+            String path = "/config/" + config.getId();
             curatorFramework.create().creatingParentsIfNeeded().forPath(path,
                     new Gson().toJson(config).getBytes());
         }
@@ -36,7 +36,7 @@ public class ConfigServiceImpl implements ConfigService {
     public void config(String type, List<Config> configs) throws Exception {
         if (Sets.newHashSet("INSERT", "DELETE", "UPDATE").contains(type)) {
             for (Config config : configs) {
-                String path = "/config/" + config.getName();
+                String path = "/config/" + config.getId();
                 if ("INSERT".equals(type)) {
                     curatorFramework.create().creatingParentsIfNeeded().forPath(path,
                             new Gson().toJson(config).getBytes());

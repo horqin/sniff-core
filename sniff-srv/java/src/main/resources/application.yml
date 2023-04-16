@@ -14,7 +14,7 @@ spring:
       ds1:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://centos:3307/db?allowPublicKeyRetrieval=true&useSSL=false
+        jdbc-url: jdbc:mysql://centos:3306/db?allowPublicKeyRetrieval=true&useSSL=false
         username: root
         password: root
     rules:
